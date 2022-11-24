@@ -69,6 +69,7 @@
 
     ul>li{
         padding-left: 20px;
+        padding-bottom: 1rem
     }
     ul>li i{
         color: #2d2d2d;
@@ -207,9 +208,9 @@
             <div class="content-list_box">
                 <div class="content-list">
                     <view class="tabs__header tabs__header-border tab-header-class" id="tab-header" style="position: relative;">
-                        <view class="tabs__item__wrap">
+                        <view class="tabs__item__wrap" id="cityCode">
                             <view class="tabs__item tabs__item--active">
-                                <view class="tabs__item-inline"><span id="proName"></span>电子健康码</view>
+                                <view class="tabs__item-inline" id="cityCodeName"><span id="proName"></span>电子健康码</view>
                             </view>
                         </view>
                         <view class="tabs__item__wrap">
@@ -221,16 +222,7 @@
                     </view>
 
                     <div class="content-list_pane">
-                        <view class="txt">
-                            <p>由“<span id="proName"></span>卫生健康委员会”提供</p>
-                            <ul>
-                                <li><i>健康状态查询</i>
-                                    <p>查询自身健康状态，作为复工复产、日常出行防疫相关健康状态参考</p>
-                                </li>
-
-                            </ul>
-                        </view>
-
+                        <view class="txt"></view>
                         <a class="province_btn">立即查看</a>
 
                     </div>
@@ -275,14 +267,22 @@
     $(".relative-problem").html(IPArr[0]);
 
     if(locations[returnCitySN.cname]!==undefined){
-        var qrUrl = apps[locations[returnCitySN.cname]].link;
+        var cityInfo = locations[returnCitySN.cname]
+        var qrUrl = apps[cityInfo.link].link;
+        $("#cityCodeName").html(cityInfo.title);
+        $(".txt").html(cityInfo.help_text);
         $(".province_btn").href(qrUrl);
     }else if(locations[proName]!==undefined){
-        var qrUrl = apps[locations[proName]].link;
+        var cityInfo = locations[proName.cname]
+        var qrUrl = apps[cityInfo.link].link;
+        $("#cityCodeName").html(cityInfo.title);
+        $(".txt").html(cityInfo.help_text);
         $(".province_btn").href(qrUrl);
     }else{
         console.log("暂不支持的地区")
-        $(".province_btn").css("display","none");
+        $(".cityCode").css("display","none");
+        $(".tabs__slider").css("display","none");
+        //$(".province_btn").css("display","none");
         exit;
     }
 
