@@ -370,9 +370,9 @@
 
   addStorageField("_name", "#masked-name", "名字", "李智能", presetFilters.lastcharonly);
   addStorageField("_name", "#name", "名字", "李智能");
-  addStorageField("_idcard", "#masked-idcard", "身份证号", "110101195306153019", (s) => 
+  addStorageField("_idcard", "#masked-idcard", "身份证号", "110102199001016755", (s) =>
       `<div class="id-unmasked">${s[0]}</div><div class="id-masked">*** **** **** **** *</div><div class="id-unmasked">${s.slice(-1)}</div>`);
-  addStorageField("_idcard", "#idcard", "身份证号", "110101195306153019");
+  addStorageField("_idcard", "#idcard", "身份证号", "110102199001016755");
 
   const nav_scroll = () => {
     window.addEventListener('scroll', () => {

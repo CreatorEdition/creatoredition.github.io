@@ -210,11 +210,11 @@
   });
 
   addStorageField("_name", "#name", "名字", "李智能");
-  addStorageField("_idcard", "#idcard", "身份证号", "110101195306153019", (x) =>
+  addStorageField("_idcard", "#idcard", "身份证号", "110102199001016755", (x) =>
     x.slice(0, 4) + " " + x.slice(4, 8) + " " +
     x.slice(8, 12) + " " + x.slice(12, 16) + " " + x.slice(16)
   );
-  addStorageField("_idcard", "#masked-idcard", "身份证号", "110101195306153019", (x) => "**** **** **** **** **");
+  addStorageField("_idcard", "#masked-idcard", "身份证号", "110102199001016755", (x) => "**** **** **** **** **");
   
   function toggleInfoMask(t) {
     document.getElementById("eye-open").style.display = t ? "none" : "block";
