@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<title>粤康码</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+<meta name="theme-color" content="#569AFE">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" sizes="246x246" href="./ykm/static/yss.jpeg">
+<link rel="icon" type="image/jpeg" href="./ykm/static/yss.jpeg">
+<link rel="stylesheet" href="../common/nav.css">
+<script src="../common/base.js"></script>
+<style>
+    block,view{display:block}
+    body{height:100%;margin:0;font-family:"PingFang SC",sans-serif;background:#f5f5f9}
+    .navbar--alipay-alternative{
+        height: 0;
+    }
+    .navbar--alipay-alternative .navbar__title {
+        font-weight: 500;
+        display: flex;align-items: center;justify-content: center;
+    }
+    .navbar--alipay-alternative .navbar__inner{
+        height: 50px;
+    }
+
+    .triangle {
+        width: 0; height: 0; border: 10px solid #0000; border-top: 0; border-bottom-color: #fff; transition: transform .3s; -moz-transition: transform .3s; -webkit-transition: transform .3s; -o-transition: transform .3s;
+    }
+    .capsule--alipay {
+        top:12px;
+        top: calc(12px + env(safe-area-inset-top,0));
+    }
+    .content{background:#fff;padding:3.333vw 3.333vw 2.4vw;position:relative}
+    .content-list{background:#fff;border-radius:2.667vw 2.667vw 0 0;position:relative}
+    .content-list_box{background-color:#fff;border-radius:8px;box-shadow:0 2px 20px 0 rgba(0,0,0,.06);
+        margin-bottom:3.2vw;
+        padding: 2vw 0;}
+    .txt {
+        color: #858587;
+        font-family: PingFangSC-Regular;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 5.867vw;
+        margin-top: 8vw;
+        padding-left: 5.333vw;
+        padding-right: 5.333vw;
+    }
+    .province_btn {
+        line-height: 1.05rem;
+        color: #fff;
+        background: #1677ff;
+        font-weight: 400;
+        border: 1px solid #0000;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+        letter-spacing: 1px;
+        margin: 30px;
+        border-radius: 5px;
+    }
+
+    ul{
+        padding: 15px 0;
+        list-style: none;
+        min-height: 25vh;
+    }
+
+    ul>li{
+        padding-left: 20px;
+    }
+    ul>li i{
+        color: #2d2d2d;
+        font-style: normal;
+        font-weight: 500;
+    }
+    ul>li p{
+        margin-block-start: 0.5rem;
+    }
+    ul>::before {
+        content: "";
+        display: list-item;
+        position: relative;
+        left: -30px;
+        width: 30px;
+        height: 1.5em;
+        margin-bottom: -1.5em;
+        background-image: url(data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23666%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    .tabs__header {align-items: center; box-sizing: border-box; display: flex; flex-direction: row; justify-content: center; position: fixed; top: 0; width: 100%; z-index: 850; }
+    .tabs__header-border:after { background-color: #f7f7f9; bottom: 0; content: ""; height: 1px; left: 0; position: absolute; right: 0; transform: scaleY(.5); width: 100%; }
+    .tabs__item__wrap { color: #343434; flex: 1; font-size: 20px; line-height: 5.333vw; text-align: center; }
+    .tabs__item { margin-bottom: 3vw; margin-top: 6vw; }
+    .tabs__item-border { border-right: 0.133vw solid #ccc; }
+    .tabs__item-inline { display: inline-block; }
+    .tabs__item--active { color: #1978f0; }
+    .tabs__slider {
+        background-color: #1978f0; bottom: 0vw; height: 0.533vw;
+        left: calc(17vw - 4px); position: absolute; z-index: 1; width: calc(16vw + 8px); }
+    .content-list_header .header_faimly{justify-content:flex-end;min-width:30%;text-align:right;width:30%!important}
+    .content-list_header .header_faimly,.header_name{align-items:center;color:#000;display:flex;font-family:PingFangSC-Regular;font-size:4vw;letter-spacing:0}
+    .box_yellow-temp .header_name_box:after{background-color:rgba(255,143,31,.3)}
+    .box_red-temp .header_name_box:after{background-color:rgba(254,55,55,.3)}
+    .header_city .triangle,.header_name .triangle{border-color:#000 transparent transparent!important}
+    .normal-temp{
+        background-color:#1677ff;
+        background-repeat:repeat;background-size:120px 120px;opacity:1;position:relative}
+    .hotTemp_wrap{position:relative;z-index:6}@-webkit-keyframes bg-scrolling-reverse{0%{background-position:60px 0,60px 0,0 0,0 0}to{background-position:60px -120px,60px -120px,0 -120px,0 -120px}}@keyframes bg-scrolling-reverse{0%{background-position:60px 0,60px 0,0 0,0 0}to{background-position:60px -120px,60px -120px,0 -120px,0 -120px}}
+    .bg_white{background-image:linear-gradient(180deg,hsla(0,0%,100%,0),#fff);
+        bottom:0;left:0;position:absolute;right:0;height: 81%;
+        top: 30%;
+        z-index:5}
+    .bg_white-normal-temp{background-image:linear-gradient(180deg,rgba(235,240,252,0),#f5f5f9 15%)}
+    .red-temp .img_border,.yellow-temp .img_border{margin-top:.533vw}
+    .status .result_label{font-size:4.533vw;font-weight:400;justify-content:center;line-height:6.4vw;padding:1.067vw 2.533vw 1.067vw 2.4vw}
+    .status .result_label .result_arrow{height:3.333vw;margin-left:1.6vw;width:3.333vw}
+    .status-img image{height:100%;width:100%}
+    .address-title-desc image{height:100%;width:100%}
+    .item-left image{height:13.333vw;width:13.333vw}
+     .desc-cell+.desc-cell{margin-top:4vw}
+    .err_tips view{color:#4293f4;display:inline;margin-left:2.667vw}
+    .red-temp .result_label{background:rgba(240,66,44,.1);border:.267vw solid #fe3737;color:#fe3737}
+    .yellow-temp .result_label{background:rgba(255,143,31,.1);border:.267vw solid #ff8f1f;color:#ff8f1f}
+    .normal-temp .sub-list,.red-temp .sub-list,.yellow-temp .sub-list{background:hsla(0,0%,100%,.1);color:#fff}
+    .tgpz{background:rgba(9,187,7,.1);border-radius:.933vw;color:#09bb07;font-family:PingFangSC-Regular;font-size:3.733vw;letter-spacing:0;line-height:5.333vw;padding:.133vw 1.333vw;text-align:center}
+    .normal-temp .tgpz,.red-temp .tgpz,.yellow-temp .tgpz{background:rgba(0,0,0,.2);color:#fff}
+    .ykmxx-line{box-shadow:inset 0 -.267vw 0 0 #ebebeb;height:.133vw;width:100%}
+    .sub-cl{align-items:center;display:flex;justify-content:center;margin-left:5.333vw;margin-right:5.333vw;padding-bottom:4.8vw;padding-top:4.8vw;position:relative}
+    .normal-temp .sub-cl,.red-temp .sub-cl,.sub-cl{box-shadow:inset 0 -.133vw 0 0 hsla(0,0%,100%,.12)}
+    .normal-temp .sub-cl{color:#fff}
+    .red-temp .city,.yellow-temp .city{color:#fff}
+    .red-temp .triangle,.yellow-temp .triangle{border-color:#fff transparent transparent}
+    .normal-temp .city{color:#fff}
+    .normal-temp .triangle{border-color:#fff transparent transparent}
+    .city{align-items:center;color:#000;display:flex;font-family:PingFangSC-Medium;font-size:5.6vw;letter-spacing:0;line-height:6.4vw;width:20%}
+    .triangle{border-color:#FFF transparent transparent;border-style:solid;border-width:1.333vw 1.2vw 0;height:0;margin-left:1.6vw;width:0}
+    .contented .timer_preview{color:#000;font-family:PingFangSC-Semibold;font-size:8vw;font-weight:500;letter-spacing:0;line-height:8vw;text-align:center;vertical-align:middle;width:60vw;white-space:nowrap}@keyframes fade{0%{opacity:.1}to{opacity:1}}@-webkit-keyframes fade{0%{opacity:1}to{opacity:0}}
+    .result_box .result_label{font-size:4vw;font-weight:400;line-height:6.4vw;padding:1.067vw 2.533vw 1.067vw 2.4vw}
+    .result_box .result_label .result_arrow{height:3.333vw;margin-left:.533vw;width:3.333vw}
+    .result_label_green{background:rgba(56,176,107,.1);border:.267vw solid #00b462;border-radius:.533vw;color:#00b462}
+    .sub-block{border-radius:2.667vw;box-shadow:0 2px 5px #eee}
+    .entry,.sub-block{display:flex;height:30.8vw;justify-content:space-between;margin:0 auto;width:89.333vw}
+    .entry{background-color:#fff;border-radius:2.667vw;box-sizing:border-box;height:22.533vw;padding-bottom:3.2vw;padding-top:1.333vw;position:relative;z-index:40}
+    .entry-item{align-items:center;border-radius:1.067vw;display:flex;filter:blur(10);flex-direction:column;justify-content:center;position:relative;width:21.067vw}
+    .entry-item_label{height:4vw;left:0;margin-left:auto;margin-right:auto;position:absolute;right:0;top:0;width:13.867vw}
+    .entry-item_icon{height:9.6vw;margin-bottom:.8vw;margin-top:1.6vw;width:9.6vw}
+    .entry-item_name{color:#000;font-family:PingFangSC-Regular;font-size:3.733vw;font-weight:400;letter-spacing:0;text-align:center}
+    .jiechu-tips{height:9.467vw;left:45%;margin-left:auto;margin-right:auto;position:absolute;right:0;top:9.333vw;width:48vw;z-index:10}
+    .jiechu-tips .image-tips,.jiechu-tips_warp{height:100%;width:100%}
+    .jiechu-tips .tips-close{height:5.333vw;position:absolute;right:2.4vw;text-align:center;top:2.667vw;width:5.333vw}
+    .hesuan-tips{height:10.933vw;left:2.667vw;position:absolute;top:-8.667vw;width:62.8vw;z-index:10}
+    .hesuan-tips .image-tips{height:100%;width:100%}
+    .hesuan-tips .tips-close{text-align:center}
+    .block-item{border:.533vw solid #fff;border-radius:1.067vw 0 0 1.067vw;height:29.6vw;width:44.667vw}
+    .block-item,.sub-block{background-color:#fff}
+    .sub-block_line{background:#ebebeb;height:24.267vw;position:relative;top:3.467vw;width:.133vw}
+    .block-item:first-child{border-radius:2.667vw 0 0 2.667vw;border-right:0}
+    .block-item:nth-child(3){border-left:0;border-radius:0 2.667vw 2.667vw 0}
+    .hesuan_block{background-image:linear-gradient(180deg,#00b93e,#007d00)}
+    .hesuan_lv{background-image:linear-gradient(180deg,#a079eb,#6f3cd0)}
+    .hesuan_blue{background-image:linear-gradient(180deg,#008bff,#003cd0)}
+    .hesuan_orgereen{background-image:linear-gradient(180deg,#15b6b9,#006e70)}
+    .block-item_icon{height:4vw;padding-right:1.333vw;width:4vw}
+    .block-item_title{align-items:center;color:#000;display:flex;font-family:PingFangSC-Regular;font-size:4vw;font-weight:400;height:5.6vw;justify-content:center;padding-top:2.4vw}
+    .hesuan_block .block-item_desc,.hesuan_block .block-item_tips,.hesuan_block .block-item_title,.hesuan_orgereen .block-item_desc,.hesuan_orgereen .block-item_tips,.hesuan_orgereen .block-item_title{color:#fff;margin-bottom:.8vw}
+    .block-item_arrow{height:2.4vw;padding-left:1.6vw;width:1.467vw}
+    .hesuan-warp .block-item_desc{font-family:PingFangSC-Medium;font-size:6.4vw;height:auto;line-height:7.467vw;padding-top:3.733vw}
+    .block-item_desc,.hesuan-warp .block-item_tips{padding-top:3.867vw}
+    .block-item_desc{color:#999;font-family:PingFangSC-Medium;font-size:4.8vw;height:5.6vw;line-height:5.6vw;text-align:center}
+    .block-item_desc img{display:block;height:12.8vw;margin:.8vw auto .533vw;width:25.333vw}
+    .desc--green{color:#009d3e;font-weight:400}
+    .block-item_tips{color:#999;filter:blur(10);font-family:PingFangSC-Regular;font-size:3.2vw;height:4.533vw;letter-spacing:0;line-height:4.533vw;padding-top:5.6vw;text-align:center}
+    .no_pt{height:auto;padding-top:0}
+    .nav{align-items:center;color:#fff;display:flex;font-size:4.533vw;justify-content:center;position:relative}
+    .nav_close{height:16vw;left:-1.333vw;position:absolute;width:16vw}
+    .content-list_nav{font-size:5.867vw;font-weight:700;height:14.667vw;line-height:14.667vw;position:relative;width:100%}
+    .yellow-temp .content-list_nav{background:linear-gradient(180deg,#fff8f1,#ffefde);color:#ca925b;text-align:center}
+    .red-temp .content-list_nav{background:linear-gradient(180deg,#fff1f1,#ffdede);color:#b55f5f;text-align:center}
+    .fygztbutton{
+        margin: 3.067vw 5.333vw 2.667vw;
+        padding: 3.2vw 4.8vw;
+        position: relative;
+        background-color: #fff;
+        border-radius: 2.667vw;
+        box-sizing: border-box;
+        height: 22.533vw;
+        padding-bottom: 3.2vw;
+        padding-top: 5vw;
+        z-index: 40;
+        box-shadow: 0vw 0.533vw 6.4vw 0vw rgb(25 24 71 / 12%);
+    }
+    .fy_action_title{color:#000;font-family:PingFangSC-Medium;font-size:4.8vw;font-weight:700;letter-spacing:0;line-height:6.667vw;margin-bottom:.533vw}
+    .fy_action_title span{color:#1f79f4;}
+
+    .fy_action_desc{color:#000;font-family:PingFangSC-Regular;font-size:3.467vw;font-weight:400;letter-spacing:0;line-height:5.067vw;opacity:.5}
+    .fy_acyion_img{bottom:0;height:20.4vw;position:absolute;right:0;width:26.133vw}
+    .taro__modal{z-index:9999999999}
+    .taro-modal__foot{border-top:.133vw solid #e7e7e7}
+    .normalTag{background:hsla(0,0%,100%,.2);color:#fff}
+    .colorTag,.normalTag{border-radius:.267vw;font-family:PingFangSC-Regular;font-size:2.933vw;font-weight:400;line-height:4vw;margin-left:2.667vw;padding:0 1.067vw}
+    .colorTag{background:rgba(66,147,244,.2);color:#3888ff}
+</style>
+<div class="navbar navbar--alipay-alternative">
+    <div class="navbar__placeholder"></div>
+    <div class="navbar__inner">
+        <div class="navbar__title">
+            健康码·<span id="cityName"></span>
+            <div class="triangle down" id="triangle" onclick="$('#cover').hide();"></div>
+        </div>
+        <div class="capsule capsule--alipay capsule--alternative" onclick="navigateHome();">
+            <svg class="capsule__menu-icon" viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="14" r="6"></circle>
+                <circle cx="54" cy="14" r="6"></circle>
+                <circle cx="10" cy="14" r="6"></circle>
+            </svg>
+            <div class="capsule__splitter"></div>
+            <svg class="capsule__exit-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                <line x1="21" y1="21" x2="39" y2="39" stroke-width="5"></line>
+                <line x1="39" y1="21" x2="21" y2="39" stroke-width="5"></line>
+                <circle cx="30" cy="30" r="24" stroke-width="5" fill="transparent"></circle>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="page page_normal-temp" style="min-height: 100vh;">
+    <div class="content contented normal-temp" style="padding-top: 0; padding-top: env(safe-area-inset-top, 0);">
+
+        <div class="bg_white bg_white-normal-temp"></div>
+        <div class="hotTemp_wrap">
+            <div class="nav" style="height: 44px; margin-bottom: 12vw;">
+                <div class="navbar__title">
+
+                </div>
+
+            </div>
+            <div class="content-list_box">
+                <div class="content-list">
+                    <view class="tabs__header tabs__header-border tab-header-class" id="tab-header" style="position: relative;">
+                        <view class="tabs__item__wrap">
+                            <view class="tabs__item tabs__item--active">
+                                <view class="tabs__item-inline"><span id="proName"></span>电子健康码</view>
+                            </view>
+                        </view>
+                        <view class="tabs__item__wrap">
+                            <view class="tabs__item">
+                                <view class="tabs__item-inline">国家平台健康码</view>
+                            </view>
+                        </view>
+                        <view class="tabs__slider"></view>
+                    </view>
+
+                    <div class="content-list_pane">
+                        <view class="txt">
+                            <p>由“<span id="proName"></span>卫生健康委员会”提供</p>
+                            <ul>
+                                <li><i>健康状态查询</i>
+                                    <p>查询自身健康状态，作为复工复产、日常出行防疫相关健康状态参考</p>
+                                </li>
+
+                            </ul>
+                        </view>
+
+                        <a class="province_btn">立即查看</a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div ariaLabel="防疫工作台" ariaRole="button" bind:tap="handleTap" class="fygztbutton" data-action="report"
+         data-actionType="fyzzt" data-path="/operation_plus/pages/yiqing/daka/user/work-brench/index">
+        <div class="fy_action_title"><span>在线查核酸</span> 安全出行</div>
+        <div class="fy_action_desc">查核酸结果和附近的核酸点</div>
+        <image class="fy_acyion_img" src="./ykm/static/eb0bdecffb0b41192f65fbaee7cb5d39.png"></image>
+    </div>
+    <br>
+</div>
+<script>
+    setDynamicTime(".timer_preview", 5, 19)
+    setStaticTime("#covid-test-time", 0, 16, 10, 10);
+
+    addStorageField("_name", "#_name", "名字", "李智能", presetFilters.name);
+    addStorageField("_city", "#_city", "城市", "广州");
+    addStorageField("_vaccine_date", "#vaccine-date", "疫苗接种完成日期", "2021-06-26");
+
+    initServiceWorker("ykm");
+</script>
+
+<script src="https://cdnjs.gtimg.com/cdnjs/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script>
+
+    console.log(returnCitySN.cname)
+    //返回对象Object {ret: 1, start: -1, end: -1, country: "中国", province: "北京",city: "北京"…}
+
+    var reg = /.+?(省|市|自治区|自治州|县|区)/g;
+    var IPArr = returnCitySN.cname.match(reg);
+    $("[id=cityName]").html(IPArr[1]);
+    $("[id=proName]").html(IPArr[0]);
+    qrCodeUrl='onclick="window.location.href = \'./index.html\';"';
+    $(".relative-problem").html(IPArr[0]);
+
+    //document.getElementById("cityName").innerHTML = IPArr[1];
+    //document.getElementById("proName").innerHTML = IPArr[0];
+    //document.getElementById("proQrName").innerHTML = IPArr[0]+"健康码";
+
+
+</script>
