@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<title>粤康码</title>
+<title>二维码扫描</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
-<meta name="theme-color" content="#569AFE">
+<meta name="theme-color" content="#FCFCFC">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" sizes="246x246" href="./ykm/static/yss.jpeg">
-<link rel="icon" type="image/jpeg" href="./ykm/static/yss.jpeg">
+<link rel="icon" type="image/jpeg" href="common/images/logo.jpg">
+<link rel="apple-touch-icon" sizes="512x512" href="common/images/logo.jpg">
 <link rel="stylesheet" href="../common/nav.css">
 <script src="../common/base.js"></script>
 <style>
@@ -51,7 +51,7 @@
         background: #1677ff;
         font-weight: 400;
         border: 1px solid #0000;
-        height: 60px;
+        height: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -95,7 +95,6 @@
     .tabs__header-border:after { background-color: #f7f7f9; bottom: 0; content: ""; height: 1px; left: 0; position: absolute; right: 0; transform: scaleY(.5); width: 100%; }
     .tabs__item__wrap { color: #343434; flex: 1; font-size: 20px; line-height: 5.333vw; text-align: center; }
     .tabs__item { margin-bottom: 3vw; margin-top: 6vw; }
-    .tabs__item-border { border-right: 0.133vw solid #ccc; }
     .tabs__item-inline { display: inline-block; }
     .tabs__item--active { color: #1978f0; }
     .tabs__slider {
@@ -141,45 +140,17 @@
     .contented .timer_preview{color:#000;font-family:PingFangSC-Semibold;font-size:8vw;font-weight:500;letter-spacing:0;line-height:8vw;text-align:center;vertical-align:middle;width:60vw;white-space:nowrap}@keyframes fade{0%{opacity:.1}to{opacity:1}}@-webkit-keyframes fade{0%{opacity:1}to{opacity:0}}
     .result_box .result_label{font-size:4vw;font-weight:400;line-height:6.4vw;padding:1.067vw 2.533vw 1.067vw 2.4vw}
     .result_box .result_label .result_arrow{height:3.333vw;margin-left:.533vw;width:3.333vw}
-    .result_label_green{background:rgba(56,176,107,.1);border:.267vw solid #00b462;border-radius:.533vw;color:#00b462}
-    .sub-block{border-radius:2.667vw;box-shadow:0 2px 5px #eee}
-    .entry,.sub-block{display:flex;height:30.8vw;justify-content:space-between;margin:0 auto;width:89.333vw}
-    .entry{background-color:#fff;border-radius:2.667vw;box-sizing:border-box;height:22.533vw;padding-bottom:3.2vw;padding-top:1.333vw;position:relative;z-index:40}
-    .entry-item{align-items:center;border-radius:1.067vw;display:flex;filter:blur(10);flex-direction:column;justify-content:center;position:relative;width:21.067vw}
-    .entry-item_label{height:4vw;left:0;margin-left:auto;margin-right:auto;position:absolute;right:0;top:0;width:13.867vw}
-    .entry-item_icon{height:9.6vw;margin-bottom:.8vw;margin-top:1.6vw;width:9.6vw}
-    .entry-item_name{color:#000;font-family:PingFangSC-Regular;font-size:3.733vw;font-weight:400;letter-spacing:0;text-align:center}
-    .jiechu-tips{height:9.467vw;left:45%;margin-left:auto;margin-right:auto;position:absolute;right:0;top:9.333vw;width:48vw;z-index:10}
     .jiechu-tips .image-tips,.jiechu-tips_warp{height:100%;width:100%}
     .jiechu-tips .tips-close{height:5.333vw;position:absolute;right:2.4vw;text-align:center;top:2.667vw;width:5.333vw}
     .hesuan-tips{height:10.933vw;left:2.667vw;position:absolute;top:-8.667vw;width:62.8vw;z-index:10}
     .hesuan-tips .image-tips{height:100%;width:100%}
     .hesuan-tips .tips-close{text-align:center}
-    .block-item{border:.533vw solid #fff;border-radius:1.067vw 0 0 1.067vw;height:29.6vw;width:44.667vw}
-    .block-item,.sub-block{background-color:#fff}
-    .sub-block_line{background:#ebebeb;height:24.267vw;position:relative;top:3.467vw;width:.133vw}
-    .block-item:first-child{border-radius:2.667vw 0 0 2.667vw;border-right:0}
-    .block-item:nth-child(3){border-left:0;border-radius:0 2.667vw 2.667vw 0}
-    .hesuan_block{background-image:linear-gradient(180deg,#00b93e,#007d00)}
-    .hesuan_lv{background-image:linear-gradient(180deg,#a079eb,#6f3cd0)}
-    .hesuan_blue{background-image:linear-gradient(180deg,#008bff,#003cd0)}
-    .hesuan_orgereen{background-image:linear-gradient(180deg,#15b6b9,#006e70)}
-    .block-item_icon{height:4vw;padding-right:1.333vw;width:4vw}
-    .block-item_title{align-items:center;color:#000;display:flex;font-family:PingFangSC-Regular;font-size:4vw;font-weight:400;height:5.6vw;justify-content:center;padding-top:2.4vw}
     .hesuan_block .block-item_desc,.hesuan_block .block-item_tips,.hesuan_block .block-item_title,.hesuan_orgereen .block-item_desc,.hesuan_orgereen .block-item_tips,.hesuan_orgereen .block-item_title{color:#fff;margin-bottom:.8vw}
-    .block-item_arrow{height:2.4vw;padding-left:1.6vw;width:1.467vw}
     .hesuan-warp .block-item_desc{font-family:PingFangSC-Medium;font-size:6.4vw;height:auto;line-height:7.467vw;padding-top:3.733vw}
     .block-item_desc,.hesuan-warp .block-item_tips{padding-top:3.867vw}
     .block-item_desc{color:#999;font-family:PingFangSC-Medium;font-size:4.8vw;height:5.6vw;line-height:5.6vw;text-align:center}
     .block-item_desc img{display:block;height:12.8vw;margin:.8vw auto .533vw;width:25.333vw}
-    .desc--green{color:#009d3e;font-weight:400}
-    .block-item_tips{color:#999;filter:blur(10);font-family:PingFangSC-Regular;font-size:3.2vw;height:4.533vw;letter-spacing:0;line-height:4.533vw;padding-top:5.6vw;text-align:center}
-    .no_pt{height:auto;padding-top:0}
     .nav{align-items:center;color:#fff;display:flex;font-size:4.533vw;justify-content:center;position:relative}
-    .nav_close{height:16vw;left:-1.333vw;position:absolute;width:16vw}
-    .content-list_nav{font-size:5.867vw;font-weight:700;height:14.667vw;line-height:14.667vw;position:relative;width:100%}
-    .yellow-temp .content-list_nav{background:linear-gradient(180deg,#fff8f1,#ffefde);color:#ca925b;text-align:center}
-    .red-temp .content-list_nav{background:linear-gradient(180deg,#fff1f1,#ffdede);color:#b55f5f;text-align:center}
     .fygztbutton{
         margin: 3.067vw 5.333vw 2.667vw;
         padding: 3.2vw 4.8vw;
@@ -198,18 +169,13 @@
 
     .fy_action_desc{color:#000;font-family:PingFangSC-Regular;font-size:3.467vw;font-weight:400;letter-spacing:0;line-height:5.067vw;opacity:.5}
     .fy_acyion_img{bottom:0;height:20.4vw;position:absolute;right:0;width:26.133vw}
-    .taro__modal{z-index:9999999999}
-    .taro-modal__foot{border-top:.133vw solid #e7e7e7}
-    .normalTag{background:hsla(0,0%,100%,.2);color:#fff}
-    .colorTag,.normalTag{border-radius:.267vw;font-family:PingFangSC-Regular;font-size:2.933vw;font-weight:400;line-height:4vw;margin-left:2.667vw;padding:0 1.067vw}
-    .colorTag{background:rgba(66,147,244,.2);color:#3888ff}
 </style>
 <div class="navbar navbar--alipay-alternative">
     <div class="navbar__placeholder"></div>
     <div class="navbar__inner">
-        <div class="navbar__title">
+        <div class="navbar__title" onclick="window.location.href = './choose.html';">
             健康码·<span id="cityName"></span>
-            <div class="triangle down" id="triangle" onclick="$('#cover').hide();"></div>
+            <div class="triangle down" id="triangle"></div>
         </div>
         <div class="capsule capsule--alipay capsule--alternative" onclick="navigateHome();">
             <svg class="capsule__menu-icon" viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg">
@@ -294,6 +260,7 @@
 </script>
 
 <script src="https://cdnjs.gtimg.com/cdnjs/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="app.js"></script>
 <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
 <script>
 
@@ -304,8 +271,20 @@
     var IPArr = returnCitySN.cname.match(reg);
     $("[id=cityName]").html(IPArr[1]);
     $("[id=proName]").html(IPArr[0]);
-    qrCodeUrl='onclick="window.location.href = \'./index.html\';"';
+    //qrCodeUrl='onclick="window.location.href = \'./index.html\';"';
     $(".relative-problem").html(IPArr[0]);
+
+    if(locations[returnCitySN.cname]!==undefined){
+        var qrUrl = apps[locations[returnCitySN.cname]].link;
+        $(".province_btn").href(qrUrl);
+    }else if(locations[proName]!==undefined){
+        var qrUrl = apps[locations[proName]].link;
+        $(".province_btn").href(qrUrl);
+    }else{
+        console.log("暂不支持的地区")
+        $(".province_btn").css("display","none");
+        exit;
+    }
 
     //document.getElementById("cityName").innerHTML = IPArr[1];
     //document.getElementById("proName").innerHTML = IPArr[0];

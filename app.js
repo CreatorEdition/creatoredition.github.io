@@ -1,3 +1,20 @@
+const locations = {
+  "广东省" : "ykm",
+  "江苏省" : "skm",
+  "北京市" : "jkb",
+  "四川省" : "tfjkt",
+  "上海市" : "ykm",
+  "山东省" : "shandong-hc",
+  "湖北省" : "hubei-hc",
+  "湖北省武汉市" : "hunan-hc",
+  "福建省" : "fujian-hc",
+  "浙江省" : "zhejiang-hc",
+  "河南省" : "henan-hc",
+  "天津市" : "tianjin-hc",
+  "陕西省" : "shaanxi-hc",
+  "重庆市" : "chongqing-hc",
+}
+
 const apps = {
   "trip-card": {
     title: "通信大数据行程卡",
