@@ -76,9 +76,8 @@
       </view>
       <view class="tabs__content">
         <view class="tab-pane">
-          <view class="txt">说明：省内核酸数据来源于广东省新冠病毒检测信息系统，支持查询近一个月记录。我省核酸检测结果信息由省有关部门统一报送国家平台，无需群众自行上报。</view>
+          <view class="txt">说明：省内核酸数据来源于广东省新冠病毒检测信息系统，支持查询近7日记录。我省核酸检测结果信息由省有关部门统一报送国家平台，无需群众自行上报。</view>
           <view class="member-list">
-              <!-- -->
             <view class="member-item">
               <view class="member-top">
                 <view class="member-name">李智能</view>
@@ -132,7 +131,6 @@
                 <template is="t" data="{{item:item,key:'检测结果'}}"></template> -->
               </view>
             </view>
-              <!-- -->
             <view class="member-item">
               <view class="member-top">
                 <view class="member-name">李智能</view>
@@ -186,7 +184,6 @@
                 <template is="t" data="{{item:item,key:'检测结果'}}"></template> -->
               </view>
             </view>
-              <!-- -->
             <view class="member-item">
               <view class="member-top">
                 <view class="member-name">李智能</view>
@@ -197,7 +194,7 @@
                       <text>采样时间</text>
                     </view>
                     <view class="preview-item__content preview-item__content__text-right">
-                      <text class="sample-time" data-traceback-hours="62" data-traceback-range="4"></text>
+                      <text class="sample-time" data-traceback-hours="64" data-traceback-range="8"></text>
                     </view>
                 </view>
                 <view class="preview-item">
@@ -205,7 +202,7 @@
                       <text>检测时间</text>
                     </view>
                     <view class="preview-item__content preview-item__content__text-right">
-                      <text class="test-time" data-traceback-hours="52" data-traceback-range="4"></text>
+                      <text class="test-time" data-traceback-hours="54" data-traceback-range="8"></text>
                     </view>
                 </view>
                 <view class="preview-item">
@@ -232,7 +229,7 @@
                       <text style="color: #09BB07;">阴性</text>
                     </view>
                 </view>
-
+                  
                 <!-- <template is="t" data="{{item:item,key:'采样时间'}}" wx:if="{{type==='hesuan'&&item['采样时间']&&item['采样时间']!=item['检测时间']}}"></template>
                 <template is="t" data="{{item:item,key:'检测时间'}}" wx:if="{{type==='hesuan'&&item['检测时间']}}"></template>
                 <template is="t" data="{{item:item,key:'检测机构'}}"></template>
@@ -240,7 +237,6 @@
                 <template is="t" data="{{item:item,key:'检测结果'}}"></template> -->
               </view>
             </view>
-              <!-- -->
           </view>
         </view>
       </view>
