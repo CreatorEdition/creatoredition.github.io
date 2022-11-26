@@ -7,6 +7,8 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/jpeg" href="common/images/logo.jpg">
 <link rel="apple-touch-icon" sizes="512x512" href="common/images/logo.jpg">
+<link rel="dns-prefetch" href="//whois.pconline.com.cn">
+<meta name="referrer" content="no-referrer">
 <link rel="stylesheet" href="../common/nav.css">
 <script src="../common/base.js"></script>
 <style>
@@ -240,55 +242,37 @@
     </div>
     <br>
 </div>
-<script>
-    setDynamicTime(".timer_preview", 5, 19)
-    setStaticTime("#covid-test-time", 0, 16, 10, 10);
-
-    addStorageField("_name", "#_name", "名字", "李智能", presetFilters.name);
-    addStorageField("_city", "#_city", "城市", "广州");
-    addStorageField("_vaccine_date", "#vaccine-date", "疫苗接种完成日期", "2021-06-26");
-
-    initServiceWorker("ykm");
-</script>
 
 <script src="https://cdnjs.gtimg.com/cdnjs/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="app.js"></script>
-<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
 <script>
+    function IPCallBack (ipData){
+        // 假如把 addr 值输出到 控制台
+        // 当然了，你也可以直接调用相关字段，但是要以 data.xxx 方式调用
+        console.log(ipData);
+        $("[id=cityName]").html(ipData.city);
+        $("[id=proName]").html(ipData.pro);
 
-    console.log(returnCitySN.cname)
-    //返回对象Object {ret: 1, start: -1, end: -1, country: "中国", province: "北京",city: "北京"…}
+        if(locations[ipData.city]!==undefined){
+            var cityInfo = locations[ipData.city];
+            var qrUrl = apps[cityInfo.link].link;
+            $("#cityCodeName").html(cityInfo.title);
+            $(".txt").html(cityInfo.help_text);
+            $(".province_btn").attr("href",qrUrl);
+        }else if(locations[ipData.pro]!==undefined){
+            var cityInfo = locations[ipData.pro]
+            var qrUrl = apps[cityInfo.link].link;
+            $("#cityCodeName").html(cityInfo.title);
+            $(".txt").html(cityInfo.help_text);
+            $(".province_btn").attr("href",qrUrl);
+        }else{
+            console.log("暂不支持的地区")
+            $("#cityCode").css("display","none");
+            $(".tabs__slider").css("display","none");
+            //$(".province_btn").css("display","none");
+            exit;
+        }
 
-    var reg = /.+?(省|市|自治区|自治州|县|区)/g;
-    var IPArr = returnCitySN.cname.match(reg);
-    $("[id=cityName]").html(IPArr[1]);
-    $("[id=proName]").html(IPArr[0]);
-    //qrCodeUrl='onclick="window.location.href = \'./index.html\';"';
-    $(".relative-problem").html(IPArr[0]);
-
-    if(locations[returnCitySN.cname]!==undefined){
-        var cityInfo = locations[returnCitySN.cname]
-        var qrUrl = apps[cityInfo.link].link;
-        $("#cityCodeName").html(cityInfo.title);
-        $(".txt").html(cityInfo.help_text);
-        $(".province_btn").href(qrUrl);
-    }else if(locations[proName]!==undefined){
-        var cityInfo = locations[proName.cname]
-        var qrUrl = apps[cityInfo.link].link;
-        $("#cityCodeName").html(cityInfo.title);
-        $(".txt").html(cityInfo.help_text);
-        $(".province_btn").href(qrUrl);
-    }else{
-        console.log("暂不支持的地区")
-        $("#cityCode").css("display","none");
-        $(".tabs__slider").css("display","none");
-        //$(".province_btn").css("display","none");
-        exit;
     }
-
-    //document.getElementById("cityName").innerHTML = IPArr[1];
-    //document.getElementById("proName").innerHTML = IPArr[0];
-    //document.getElementById("proQrName").innerHTML = IPArr[0]+"健康码";
-
-
 </script>
+<script src="https://whois.pconline.com.cn/ipJson.jsp"></script>

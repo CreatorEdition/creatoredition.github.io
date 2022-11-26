@@ -26,7 +26,7 @@ const locations = {
     help_text: '<p>由“山东省卫生健康委员会”提供，含以下功能：</p> <ul> <li><i>通行卡申请</i><p>山东省内以及省外来鲁人员在线申请山东电子健康通行卡</p></li> <li><i>健康申报</i><p>填写健康信息，每日健康打卡</p> </li> </ul>'
   },
   "湖北省" : "hubei-hc",
-  "湖北省武汉市" : "hunan-hc",
+  "武汉市" : "hunan-hc",
   "福建省" : "fujian-hc",
   "浙江省" : "zhejiang-hc",
   "河南省" : "henan-hc",
