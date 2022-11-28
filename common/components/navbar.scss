@@ -28,7 +28,7 @@
       padding-top: env(safe-area-inset-top, 0);
       position: fixed;
       top: 0;
-      width: calc(100% - #{$right});
+      width: calc(100vw - #{$right});
       z-index: 5001;
       color: black;
       font-family: sans-serif;
