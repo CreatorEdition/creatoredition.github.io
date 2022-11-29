@@ -231,8 +231,8 @@ const apps = {
     help_text:
       "<p>前往“我的”一栏后点击任意位置，在配置页填写好姓名和身份证号、保存并返回后才可使用。</p>",
     menu: [
-      { title: "场所", icon: "@place", link: "shaanxi-hc/checkin.html" },
-      { title: "核酸", icon: "@vaccines", link: "shaanxi-hc/nucResult.html" },
+      { title: "场所", icon: "place", link: "shaanxi-hc/checkin.html" },
+      { title: "核酸", icon: "vaccines", link: "shaanxi-hc/nucResult.html" },
     ],
   },
   "shaanxi-hc": {
