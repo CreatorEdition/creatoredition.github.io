@@ -7,7 +7,6 @@ label {
 
 body {
   min-height: 100vh;
-  background-color: green;
   margin: 0;
   font-family: "PingFang SC", sans-serif;
 }
@@ -84,6 +83,15 @@ swiper-item {
   min-height: 100%;
   padding-bottom: 13.333vw;
   padding-top: 5.333vw;
+}
+.bg-detail{
+  border-radius: 0 0 500px 500px;
+  left: -25%;
+  width: 150%;
+  height: 150px;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  position: absolute;
 }
 
 .bg,
@@ -354,13 +362,108 @@ button[size="mini"].heyan-btn {
   padding: 1.333vw 2.667vw;
   width: 26.667vw;
 }
-
+.back-wrap{position:absolute;width:100%}
+.detail-bg{
+  padding-top: 3.333vw;
+}
+.detail-item{
+  border:1px solid #c1c1c1;
+  box-shadow:unset;
+  padding-top: 0.667vw;
+  width: 91.333vw
+}
+.detail-item .qr-info{
+  margin-bottom: 2vw
+}
+.detail-item .qr-info view{
+  font-weight: normal;
+}
+.sec-title{
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #56c056;
+  border-radius: 1.667vw;
+  color: #fff;
+  /*display: -webkit-flex;
+  display: flex;*/
+  padding: 2vw 4.667vw;
+  width: 91.333vw;
+  margin: 0 auto;
+  font-size: 4vw;
+  font-weight: lighter;
+  margin-bottom: 4vw;
+  letter-spacing: 1px;
+}
+.sec-title span{
+  float: right;
+  font-size: 3.3vw;
+  letter-spacing: 0.5px;
+  margin-top: 1.5px;
+  margin-right: 15px;
+}
 .card-menu .card .ncov-flag {
   align-items: center;
   display: flex;
   justify-content: center;
 }
+.member-item{
+  border: 1px solid #c1c1c1;
+  box-shadow: unset;
+  width: 91.333vw;
+  border-radius: 2.667vw;
+  background-color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 4vw;
+}
+.member-item::before{
+  content: "";
+  width: 3px;
+  height: 30px;
+  border: solid 0px #f00;
+  background-color: #295011;
+  position: absolute;
+  margin-top: -30px;
+  margin-left: 10px;
+  z-index: -1;
+}
+.member-item .leftImg{
+  position: relative;
+  float: left;
+  height: 4.867vw;
+  /* right: 10.667vw; */
+  /* top: 2.667vw; */
+  /* left: 2.667vw; */
+}
+.member-item .leftImg img{
+  height:100%;width:100%
+}
+.member-item .preview {
+  padding: 2.667vw 0 2.667vw 2.667vw;
+}
 
+.member-item .preview-item {
+  align-items: flex-start;
+  color: #030303;
+  display: flex;
+  flex-direction: row;
+  font-size: 4.267vw;
+  justify-content: flex-start;
+  line-height: 5.867vw;
+  padding: 2.667vw 0;
+}
+
+.member-item .preview-item.time{
+   color:#a9a9a9
+ }
+.member-item .preview-item .preview-item__label {
+  margin-right: 4.8vw;
+  width: 25.6vw;
+}
+.member-item .preview-item .preview-item__content__text-right {
+  max-width: 58.933vw;
+  text-align: right;
+}
 .card-menu .card .ncov-flag img {
   height: 9.333vw;
   width: 9.333vw;

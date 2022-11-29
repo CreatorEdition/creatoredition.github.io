@@ -1,4 +1,4 @@
-const version = "e189124f"
+const version = "17b87f59"
 const cache_name = "hcsim-cache-" + version;
 let assets = {};
 

@@ -71,6 +71,11 @@ const locations = {
     link: "hebei-hc",
     help_text: '<p>由"河北省政府服务管理办公室"提供，使用场景：</p> <ul> <li><i>查询及申报</i><p>个人健康信息查询、健康申报等</p></li><li><i>温馨提示</i><p>省内以及跨省通行，公共场所出入等具体适用场景以当地政府部门规定为准</p> </li> </ul>'
   },
+  "云南省" : {
+    title: "云南健康码",
+    link: "yunnan-hc",
+    help_text: '<p>由"云南省卫生健康委员会"提供，可在以下场景使用</p> <ul> <li><i>健康申报出行必备绿码</i><p>入滇人员出行前或到达时凭绿码通行</p></li><li><i>交通出行</i><p>铁路、公路、港口，所有入滇通道</p> </li> </ul>'
+  },
   "undefined" : {
     title: "不支持的地区",
     link: "-",
@@ -224,7 +229,11 @@ const apps = {
     icon: "tianjin-hc/static/img/logo.png",
     link: "tianjin-hc/index.html",
     help_text:
-      "<p>前往“我的”一栏后点击任意位置，在配置页填写好姓名和身份证号、保存并返回后才可使用。</p>"
+      "<p>前往“我的”一栏后点击任意位置，在配置页填写好姓名和身份证号、保存并返回后才可使用。</p>",
+    menu: [
+      { title: "场所", icon: "@place", link: "shaanxi-hc/checkin.html" },
+      { title: "核酸", icon: "@vaccines", link: "shaanxi-hc/nucResult.html" },
+    ],
   },
   "shaanxi-hc": {
     title: "陕西一码通",
@@ -233,7 +242,10 @@ const apps = {
     color: "#0bae81",
     help_text:
       "<p>点击地点名称、姓名、证件号可以修改对应信息；</p><p>点击核酸检测时间可以切换小时数；</p><p>点击“已采样”可以切换今日是否采样。</p>",
-    menu: [{ title: "场所", icon: "place", link: "shaanxi-hc/checkin.html" }],
+    menu: [
+      { title: "场所", icon: "place", link: "shaanxi-hc/checkin.html" },
+      { title: "核酸", icon: "vaccines", link: "shaanxi-hc/nucResult.html" },
+    ],
   },
   "chongqing-hc": {
     title: "渝康码",
@@ -252,6 +264,15 @@ const apps = {
     link: "hebei-hc/index.html",
     color: "#926266",
     help_text: "<p>点击地点名称、姓名、证件号可以修改对应信息；</p><p>点击“扫码未见异常”可以隐藏该标识。</p>",
+  },
+  "yunnan-hc": {
+    title: "云南健康码",
+    icon: "yunnan-hc/static/icon.png",
+    link: "yunnan-hc/index.html",
+    color: "#459A8D",
+    help_text:
+        "<p>点击姓名、证件号、场所地址等可以修改对应信息；</p><p>点击“扫场所码”展示场所码。</p>",
+    //menu: [{ title: "场所", icon: "place", link: "tfjkt/checkin.html" }],
   },
 };
 
