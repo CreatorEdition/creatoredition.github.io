@@ -272,7 +272,7 @@ const apps = {
     color: "#459A8D",
     help_text:
         "<p>点击姓名、证件号、场所地址等可以修改对应信息；</p><p>点击“扫场所码”展示场所码。</p>",
-    //menu: [{ title: "场所", icon: "place", link: "tfjkt/checkin.html" }],
+    menu: [{ title: "场所", icon: "place", link: "yunnan-hc/checkin.html" }],
   },
 };
 
