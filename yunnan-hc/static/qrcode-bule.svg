@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>icon_QR</title>
+    <desc>Created with Sketch.</desc>
+    <g id="汇总0410" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="未登录备份" transform="translate(-336.000000, -701.000000)">
+            <g id="健康码信息卡" transform="translate(39.000000, 459.000000)">
+                <g id="icon_QR" transform="translate(292.000000, 237.000000)">
+                    <rect id="矩形" fill="#FFFFFF" opacity="0" x="0" y="0" width="86" height="86"></rect>
+                    <path d="M80.25,58.75 L80.25,80.25 L69.5,80.25 L69.5,69.5 L58.75,69.5 L58.75,80.25 L37.25,80.25 L37.25,69.5 L48,69.5 L48,58.75 L80.25,58.75 Z M37.25,58.75 L37.25,69.5 L26.5,69.5 L26.5,80.25 L5,80.25 L5,69.5 L15.75,69.5 L15.75,58.75 L37.25,58.75 Z M26.5,37.25 L26.5,48 L15.75,48 L15.75,58.75 L5,58.75 L5,47.994625 L15.75,47.994625 L15.75,37.25 L26.5,37.25 Z M80.25,5 L80.25,48 L37.25,48 L37.25,5 L80.25,5 Z M26.5,5 L26.5,15.75 L15.75,15.75 L15.75,37.25 L5,37.25 L5,5 L26.5,5 Z M69.5,15.75 L48,15.75 L48,37.25 L69.5,37.25 L69.5,15.75 Z M64.125,21.125 L64.125,31.875 L53.375,31.875 L53.375,21.125 L64.125,21.125 Z" id="形状结合" fill="#459A8D"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
