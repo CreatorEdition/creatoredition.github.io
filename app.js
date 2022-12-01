@@ -22,7 +22,7 @@ const locations = {
   },
   "上海市" : {
     title: "随申码",
-    link: "ssm",
+    link: "shanghai-hc",
     help_text: '<p>由"随申办"提供，展码快速通行：</p> <ul> <li><i>场所通行</i><p>请按照工作人员指示，展示"随申码"或打开支付宝"扫一扫"场所码，快速通行</p></li> <li><i>亲属随申码</i><p>用户绑定亲属信息并申领"亲属随申码"，即可展示"亲属随申码"、查询绑定亲属核酸检测结果。</p></li> </ul>'
   },
   "山东省" : {
@@ -140,14 +140,14 @@ const apps = {
   },
   "ssm": {
     title: "随申码",
-    icon: "ssm/static/ssbapp-logo.png",
-    link: "ssm/index.html",
+    icon: "shanghai-hc/static/ssbapp-logo.png",
+    link: "shanghai-hc/index.html",
     color: "#bf4046",
     help_text:
       "<p>点击姓名、证件号、场所地址等可以修改对应信息；</p><p>点击照片可以更改或移除照片，超过 4MB 的图片可能无法在本地保存；</p><p>点击二维码展示场所码。</p>",
     menu: [
-      { title: "扫描", icon: "qr_code_scanner", link: "ssm/scan.html" },
-      { title: "场所", icon: "place", link: "ssm/checkin.html" },
+      { title: "扫描", icon: "qr_code_scanner", link: "shanghai-hc/scan.html" },
+      { title: "场所", icon: "place", link: "shanghai-hc/checkin.html" },
     ],
   },
   "shandong-hc": {
