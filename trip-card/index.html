@@ -151,18 +151,7 @@
 
 </view>
 <script>
-  function sleep(ms) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, ms);
-    });
-  }
-  function getRandomSixDigit(){
-    let code = ''
-    for(var i=0;i<9;i++){
-      code += parseInt(Math.random()*10)
-    }
-    return code
-  }
+
   console.log('code',getRandomSixDigit())
   addStorageField("_phone", "#phone", "手机号码", "13"+getRandomSixDigit(), presetFilters.phone());
 </script>

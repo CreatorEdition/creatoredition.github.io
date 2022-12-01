@@ -2,6 +2,24 @@ const root_path = "";
 const time_update_list = [];
 let time_updater_init = false;
 
+window.onload=function(){
+  // Add loding tips
+  var html ='<div role="alert" id="loadingToast" style="display:block"><div class="weui-mask_transparent"></div><div class="weui-toast"><span class="weui-primary-loading weui-icon_toast"><span class="weui-primary-loading__dot"></span></span><p class="weui-toast__content">加载中</p></div></div>';
+  var new_ele=document.createElement("div");
+  new_ele.innerHTML=html;
+  document.body.appendChild(new_ele);
+  // Wait 1s to hide
+  setTimeout(function(){
+    hideId("loadingToast");
+    }, 1000);
+}
+
+function hideId($id){
+  document.getElementById($id).style.display = "none";
+}
+
+
+
 function updateTime() {
   const d = new Date(new Date().getTime() + 8 * 3600 * 1000).toISOString().replace("T", " ");
   for (const item of time_update_list) {
@@ -10,6 +28,20 @@ function updateTime() {
     }
   }
 };
+
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+function getRandomSixDigit(){
+  let code = ''
+  for(var i=0;i<9;i++){
+    code += parseInt(Math.random()*10)
+  }
+  return code
+}
 
 let time_interval = 1000;
 
