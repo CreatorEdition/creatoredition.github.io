@@ -13,7 +13,7 @@
 <body>
   <view class="navbar navbar--wechat">
     <view class="navbar__placeholder"></view>
-    <view class="navbar__inner" style="color: black; background: white;">
+    <view class="navbar__inner" style="color:black;background:white;">
       <view class="navbar__left">
         <view class="navbar__buttons" onclick="history.back();">
           <view class="navbar__button-goback"></view>
@@ -43,7 +43,7 @@
     <view style="display: flex; flex-direction:row;justify-content:flex-start;align-items:center; flex:1;">
       <text class="title__text" onclick="window.location.href = './index.html';">核酸检测记录</text>
     </view>
-    <view bind:tap="handleTap" class="reload_box" slot="action">
+    <view class="reload_box" slot="action">
       <image class="reload" src="./static/e5cebec2f715d6d4f4c4e19b5856f836.svg"></image>
       刷新
     </view>
@@ -88,15 +88,14 @@
                       <text>采样时间</text>
                     </view>
                     <view class="preview-item__content preview-item__content__text-right">
-                      <text>2022-11-01 10:15</text>
-                    </view>
+                      <text class="sample-time" data-traceback-hours="25" data-traceback-range="4"></text>                    </view>
                 </view>
                 <view class="preview-item">
                     <view class="preview-item__label">
                       <text>采样机构</text>
                     </view>
                     <view class="preview-item__content preview-item__content__text-right">
-                      <text>深圳市盐田区海山街道办事处</text>
+                      <text class="get-institution"></text>
                     </view>
                 </view>
                 <view class="preview-item">
@@ -136,6 +135,7 @@
     setStaticTime(".sample-time", 0, 16);
     setStaticTime(".test-time", 0, 16);
     addStorageField("_name", ".member-name", "名字", "李智能");
+    addStorageField("_get_institution", ".get-institution", "采样机构", "深圳市盐田区海山街道办事处");
     addStorageField("_test_institution", ".test-institution", "检测机构", "广州金域医学检验中心");
     initServiceWorker("ykm");
   </script>
