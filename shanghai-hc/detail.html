@@ -85,7 +85,7 @@
       <div class="personal-info">
         <div tabindex="0" class="middle-title">
           <span>个人信息</span>
-          <i tabindex="0" role="button" aria-label="脱敏展示" class="switch-icon" onclick="switchNameDisplay(false);"></i>
+          <i tabindex="0" role="button" aria-label="脱敏展示" class="switch-icon" onclick="switchNameDisplay();"></i>
           <span class="middle-title__right">
 								<span class="middle-title__right-date"><span id="_date"></span>
       <span id="_time"></span></span>
@@ -265,14 +265,23 @@
   addStorageField("_idcard", "#_idcard", "身份证号", "110102199001016755", presetFilters.idcard(0,4));
   addStorageField("_test_institution", ".test-institution", "检测机构", "上海市静安区中心医院");
 
-  function switchNameDisplay(t) {
-    show_name = t;
+  let _name = localStorage.getItem("_name") || "李智能";
+  var show_name = false;
+
+  function switchNameDisplay() {
     const hidden_name = new Array(_name.length).join("*") + _name.substr(-1);
-    document.getElementById("_name").innerText = show_name ? _name : hidden_name;
-    document.getElementsByClassName("middle-title")[0].classList.add(t ? "eyes-open" : "eyes-closed");
-    document.getElementsByClassName("middle-title")[0].classList.remove(t ? "eyes-closed" : "eyes-open");
+    var x = document.querySelectorAll("#_name");var i;
+    for (i = 0; i < x.length; i++) {
+      x[i].innerText = show_name ? hidden_name : _name;
+    }
+    if(show_name==false){
+      document.getElementsByClassName("switch-icon")[0].classList.add(show_name ? "closed-eye" : "open-eye");
+      show_name = true;
+    }else if(show_name==true){
+      document.getElementsByClassName("switch-icon")[0].classList.remove(show_name ? "open-eye" : "open-eye");
+      show_name = false;
+    }
   }
-  switchNameDisplay(false);
 
   initServiceWorker("shanghai-hc");
 </script>
