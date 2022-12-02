@@ -88,7 +88,7 @@
                       <text>采样时间</text>
                     </view>
                     <view class="preview-item__content preview-item__content__text-right">
-                      <text class="sample-time" data-traceback-hours="42" data-traceback-range="4"></text>
+                      <text class="sample-time" data-traceback-hours="11" data-traceback-range="4"></text>
                     </view>
                 </view>
                 <view class="preview-item">
@@ -96,7 +96,60 @@
                       <text>检测时间</text>
                     </view>
                     <view class="preview-item__content preview-item__content__text-right">
-                      <text class="test-time" data-traceback-hours="48" data-traceback-range="4"></text>
+                      <text class="test-time" data-traceback-hours="5" data-traceback-range="4"></text>
+                    </view>
+                </view>
+                <view class="preview-item">
+                    <view class="preview-item__label">
+                      <text>检测机构</text>
+                    </view>
+                    <view class="preview-item__content preview-item__content__text-right">
+                      <text class="test-institution"></text>
+                    </view>
+                </view>
+                <view class="preview-item">
+                    <view class="preview-item__label">
+                      <text>数据来源</text>
+                    </view>
+                    <view class="preview-item__content preview-item__content__text-right">
+                      <text>广东省卫生健康委员会</text>
+                    </view>
+                </view>
+                <view class="preview-item">
+                    <view class="preview-item__label">
+                      <text>检测结果</text>
+                    </view>
+                    <view class="preview-item__content preview-item__content__text-right">
+                      <text style="color: #09BB07;">阴性</text>
+                    </view>
+                </view>
+
+                <!-- <template is="t" data="{{item:item,key:'采样时间'}}" wx:if="{{type==='hesuan'&&item['采样时间']&&item['采样时间']!=item['检测时间']}}"></template>
+                <template is="t" data="{{item:item,key:'检测时间'}}" wx:if="{{type==='hesuan'&&item['检测时间']}}"></template>
+                <template is="t" data="{{item:item,key:'检测机构'}}"></template>
+                <template is="t" data="{{item:item,key:'数据来源'}}"></template>
+                <template is="t" data="{{item:item,key:'检测结果'}}"></template> -->
+              </view>
+            </view>
+            <view class="member-item">
+              <view class="member-top">
+                <view class="member-name">李智能</view>
+              </view>
+              <view class="preview g-preview" direction="row">
+                <view class="preview-item">
+                    <view class="preview-item__label">
+                      <text>采样时间</text>
+                    </view>
+                    <view class="preview-item__content preview-item__content__text-right">
+                      <text class="sample-time" data-traceback-hours="41" data-traceback-range="4"></text>
+                    </view>
+                </view>
+                <view class="preview-item">
+                    <view class="preview-item__label">
+                      <text>检测时间</text>
+                    </view>
+                    <view class="preview-item__content preview-item__content__text-right">
+                      <text class="test-time" data-traceback-hours="32" data-traceback-range="4"></text>
                     </view>
                 </view>
                 <view class="preview-item">
