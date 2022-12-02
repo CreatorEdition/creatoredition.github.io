@@ -28,13 +28,13 @@
 <view class="navbar navbar--wechat">
   <view class="navbar__placeholder"></view>
   <view class="navbar__inner" style="color: black; background: white;">
-    <view class="navbar__left">
+    <view class="navbar__left" style="width:40vw">
       <view class="navbar__buttons" onclick="history.back();">
-        <view class="navbar__button-goback"></view>
+        <view class="navbar__button-goback" style="display:inline-block;height:1em;"></view>
+        <text style="margin-left:3.2vw;">核酸&疫苗</text>
       </view>
     </view>
     <view class="navbar__center">
-      <text>核酸检测记录</text>
     </view>
     <view class="navbar__right">
 
@@ -53,7 +53,7 @@
     <circle cx="30" cy="30" r="23" stroke-width="6" fill="transparent" />
   </svg>
 </div>
-<div id="app">
+<div id="app" style="margin-top:44px">
   <!---->
   <div class="prevention">
     <div class="van-tabs van-tabs--line">
@@ -127,12 +127,14 @@
           </div>
         </div>
         <!---->
+        <div class="nucleic__banner-sh"><div class="nucleic__status">未共享</div></div>
+        <!---->
         <div tabindex="0" class="middle-title">
           <span>核酸检测信息</span>
         </div>
         <div class="nucleic" tabindex="0">
         </div>
-
+        <!---->
         <div class="nucleic-search__result">
           <p class="nucleic-search__from">
 
