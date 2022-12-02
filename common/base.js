@@ -15,6 +15,10 @@ window.onload=function(){
 }
 
 function hideId($id){
+  document.getElementById($id).style.display = "block";
+}
+
+function showId($id){
   document.getElementById($id).style.display = "none";
 }
 
