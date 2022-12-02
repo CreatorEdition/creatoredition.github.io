@@ -138,7 +138,7 @@ const apps = {
       "<p>点击姓名、证件号、场所地址等可以修改对应信息；</p><p>点击“扫场所码”展示场所码。</p>",
     menu: [{ title: "场所", icon: "place", link: "tfjkt/checkin.html" }],
   },
-  "ssm": {
+  "shanghai-hc": {
     title: "随申码",
     icon: "shanghai-hc/static/ssbapp-logo.png",
     link: "shanghai-hc/index.html",
