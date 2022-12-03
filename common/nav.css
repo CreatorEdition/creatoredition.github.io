@@ -112,7 +112,6 @@
 }
 
 .navbar--wechat {
-    /* background: #FFF; */
     overflow: hidden;
     padding-top: env(safe-area-inset-top,0)
 }
