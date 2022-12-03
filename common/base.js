@@ -15,13 +15,17 @@ window.onload=function(){
 }
 
 function hideId($id){
-  document.getElementById($id).style.display = "block";
-}
-
-function showId($id){
   document.getElementById($id).style.display = "none";
 }
 
+function showId($id){
+  document.getElementById($id).style.display = "block";
+}
+
+function jumpTo(url){
+  showId('loadingToast');
+  window.location.href = url;
+}
 
 
 function updateTime() {

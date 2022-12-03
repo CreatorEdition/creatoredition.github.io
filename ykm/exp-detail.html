@@ -41,7 +41,7 @@
   </div>
   <view class="title">
     <view style="display: flex; flex-direction:row;justify-content:flex-start;align-items:center; flex:1;">
-      <text class="title__text" onclick="window.location.href = './index.html';">核酸检测记录</text>
+      <text class="title__text" onclick="jumpTo('./index.html');">核酸检测记录</text>
     </view>
     <view bind:tap="handleTap" class="reload_box" slot="action">
       <image class="reload" src="./static/e5cebec2f715d6d4f4c4e19b5856f836.svg"></image>
@@ -62,12 +62,12 @@
   <view>
     <view class="tabs">
       <view class="tabs__header tabs__header-border tab-header-class" id="tab-header" style="position: relative;">
-          <view class="tabs__item__wrap" onclick="window.location.href = './exp-detail.html';">
+          <view class="tabs__item__wrap" onclick="jumpTo('./exp-detail.html');">
           <view class="tabs__item tabs__item--active">
             <view class="tabs__item-inline">检测完成</view>
           </view>
         </view>
-          <view class="tabs__item__wrap" onclick="window.location.href = './exp-detailing.html';">
+          <view class="tabs__item__wrap" onclick="jumpTo('./exp-detailing.html');">
           <view class="tabs__item">
             <view class="tabs__item-inline">检测中</view>
           </view>
@@ -189,7 +189,7 @@
       </view>
     </view>
     <view style="height: 20vw"></view>
-    <view class="province_btn" onclick="window.location.href = './index.html';">
+    <view class="province_btn" onclick="jumpTo('./index.html');">
       查询外省核酸并上传至粤康码
     </view>
   </view>
