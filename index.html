@@ -121,7 +121,9 @@
         var qrUrl = apps[cityInfo.link].link;
         $("#cityCodeName").html(cityInfo.title);
         $(".txt").html(cityInfo.help_text);
-        $(".province_btn").attr("href",qrUrl);
+        //$(".province_btn").attr("href",qrUrl);
+        $(".province_btn").attr("onclick","jumpTo('"+qrUrl+"')");
+
         if(cityInfo.qr_code_scanner){
             $(".capsule__scan-icon").css("display","block");
             $(".capsule__menu-icon").css("display","none");
@@ -131,5 +133,5 @@
 </script>
 <!--<script src="https://whois.pconline.com.cn/ipJson.jsp"></script>-->
 <script>
-    document.write("<script type='text/javascript' src='https://whois.pconline.com.cn/ipJson.jsp?"+Math.random();+"'></script>");
+    document.write('<script type="text/javascript" src="https://whois.pconline.com.cn/ipJson.jsp?'+Math.random()+'"><\/script>');
 </script>
