@@ -129,74 +129,12 @@
         </view>
       </view>
   </view>
+  </view>
 </view>
   <view class="foot">北京市大数据中心</view>
 <input type="file" style="display: none;" id="upload" oninput="onInput(this);">
 <script>
-  let d = new Date(new Date().getTime() + 8 * 3600 * 1000);
-  let time_str = d.toISOString().replace("T", " ");
-  document.getElementById("date").innerText = time_str.slice(0, 10).replace("-", "年").replace("-","月").concat("日");
-  document.getElementById("time").innerText = time_str.slice(11, 19);
-  document.getElementById("query-time").innerText = time_str.slice(5, 16);
-  document.getElementById("valid-thru").innerText = time_str.slice(5, 10) + " 24:00";
-  window.setInterval(() => {
-    d = new Date(new Date().getTime() + 8 * 3600 * 1000);
-    time_str = d.toISOString().replace("T", " ");
-    document.getElementById("date").innerText = time_str.slice(0, 10).replace("-", "年").replace("-","月").concat("日");
-    document.getElementById("time").innerText = time_str.slice(11, 19);
-  }, 1000);
-
   let _name = localStorage.getItem("_name") || "请先登录";
   document.getElementById("_name").innerText = _name;
-
-  document.getElementsByClassName("img-tou")[0].attributes["src"].value = localStorage.getItem("_img") || default_img;
-  document.getElementsByClassName("img-tou")[0].addEventListener("click", () => {
-    if (localStorage.getItem("_img")) {
-      localStorage.removeItem("_img");
-      document.getElementsByClassName("img-tou")[0].attributes["src"].value = default_img;
-      return;
-    }
-    const input = document.getElementById("upload");
-    input.click();
-  });
-
-  function onInput(t) { 
-    console.log("oninput");
-    // getting a hold of the file reference
-    const file = t.files[0]; 
-
-    // setting up the reader
-    const reader = new FileReader();
-
-    // here we tell the reader what to do when it's done reading...
-    reader.onload = (readerEvent) => {
-      const content = readerEvent.target.result; // this is the content!
-      if (content) {
-        try {
-          localStorage.setItem("_img", content);
-        } catch (e) {
-          alert("照片文件较大，暂时不能保存在本地。");
-          localStorage.setItem("_img", default_img);
-        }
-        document.getElementsByClassName("img-tou")[0].attributes["src"].value = content;
-      }
-    }
-
-    reader.readAsDataURL(file); // this is reading as data url
-  }
-  
-  document.getElementsByClassName("img-status1")[0].addEventListener("click", () => {
-    const status = localStorage.getItem("_show_tongqin");
-    status ? localStorage.removeItem("_show_tongqin") : localStorage.setItem("_show_tongqin", 1);
-    document.getElementsByClassName("tongqin")[0].style.display = status ? "none" : "block";
-  });
-  if (localStorage.getItem("_show_tongqin")) {
-    document.getElementsByClassName("tongqin")[0].style.display = "block";
-  }
-
-  document.getElementsByClassName("img-flsm12")[0].addEventListener("click", () => {
-    window.location.href = "./scan.html";
-  });
-
   initServiceWorker("jkb");
 </script>
