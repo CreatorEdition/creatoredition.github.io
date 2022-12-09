@@ -191,7 +191,7 @@
   <br><br>
   <p id="tap-to-continue">轻触屏幕继续...</p>
   <br><br>
-  <div id="skip-scan">以后都跳过本提示</div>
+  <div id="skip-scan">以后都跳过提示</div>
 </div>
 <div class="navbar navbar--wechat" id="nav">
   <div class="navbar__placeholder"></div>
@@ -245,10 +245,8 @@
   document.getElementById("skip-scan").addEventListener("click", (e) => {
     localStorage.setItem("skipTips", 1);
   });
-  document.getElementById("skip-scanTips").addEventListener("click", (e) => {
-
-  });
   const video = document.querySelector("video");
+
   function startScan(){
     document.getElementById("nav").style.display = "none";
     if (!navigator.mediaDevices) {
@@ -273,6 +271,7 @@
     document.getElementById("info").remove();
     document.getElementById("scan-content").style.display = "block";
   }
+
   if (localStorage.getItem("skipTips")) {
     startScan();
   }
