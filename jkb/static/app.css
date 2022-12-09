@@ -730,6 +730,10 @@ page {
     color: #f52736;
 }
 
+.mc2 {
+    color: #0d8ce6;
+}
+
 .cen {
     box-sizing: border-box;
     display: flex;

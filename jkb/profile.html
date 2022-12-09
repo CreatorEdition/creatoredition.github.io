@@ -10,6 +10,32 @@
 <link rel="stylesheet" href="../common/nav.css">
 <link rel="stylesheet" href="./static/app.css">
 <script src="../common/base.js"></script>
+<style>
+
+  .btn-a {
+    border: 1rpx solid #ccc;
+    color: #f34347;
+    font-family: PingFangSC-Medium;
+    font-size: 34rpx;
+  }
+
+  .btn-a,.txts {
+    border-radius: 16rpx;
+  }
+
+  .txts {
+    background: #f7f7f7;
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 3.467vw;
+    letter-spacing: 0;
+    line-height: 4.8vw;
+    margin: 2.135vw 4vw;
+    padding: 1.6vw 2.133vw;
+    text-align: left;
+  }
+
+</style>
 <view class="navbar navbar--wechat navbar--wechat-alternative">
   <view class="navbar__placeholder"></view>
   <view class="navbar__inner" style="background: #327FFF;">
@@ -41,8 +67,8 @@
 <view class="profile">
   <image class="ditu1" src="./static/wodebj.png"></image>
   <view class="wrap1">
-    <view class="box">
-      <view class="box12">
+    <view class="box" style="padding:2.667vw 0">
+      <view class="box12" style="border-bottom: 1px solid #9c9c9c4d;">
         <view class="cen">
           <view class="tit-lx">
             <view class="lx">姓名</view>
@@ -62,13 +88,16 @@
             <view class="lx">手机号</view>
             <text class="mao"><img bindtap="hesuanTC" class="hesuanwenhao" src="./static/whicon-s.svg"></text>
           </view>
-          <view class="mc1" id="valid-thru"></view>
+          <view class="mc2" id="_phone">{{data.phone}}</view>
         </view>
+      </view>
+      <view class="txts">
+        <text>在您展示健康状态或扫码登记时，以上个人信息将以脱敏形式呈现。</text>
       </view>
     </view>
   </view>
   <view class="footer">
-    <div class="footer-btn" onclick="navigateHome();">返回首页</div>
+    <div class="footer-btn" onclick="jumpTo('index.html')">返回首页</div>
   </view>
   <view class="foot">北京市大数据中心</view>
 </view>
@@ -76,7 +105,7 @@
 <script>
   addStorageField("_name", "#_name", "名字", "李智能", presetFilters.lastnameonly);
   addStorageField("_idcard", "#_idcard", "身份证号", "110102199001016755", presetFilters.idcard(2, 2));
-
+  addStorageField("_phone", "#_phone", "手机号码", "13"+getRandomSixDigit(), presetFilters.phone());
 
   initServiceWorker("jkb");
 </script>
