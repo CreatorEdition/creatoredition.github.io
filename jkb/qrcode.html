@@ -153,23 +153,11 @@
     document.getElementById("date").innerText = time_str.slice(0, 10).replace("-", "年").replace("-","月").concat("日");
     document.getElementById("time").innerText = time_str.slice(11, 19);
   }, 1000);
-  
-  let _name = localStorage.getItem("_name") || "习**";
-  let _idcard = localStorage.getItem("_idcard") || "11**************19";
-  document.getElementById("_name").addEventListener("click", () => {
-    const res = window.prompt("修改名字：", _name);
-    if (res == "" || res == null) localStorage.removeItem("_name");
-    else localStorage.setItem("_name", res);
-    document.getElementById("_name").innerText = _name = res || "习**";
-  });
-  document.getElementById("_idcard").addEventListener("click", () => {
-    const res = window.prompt("修改身份证号：", _idcard);
-    if (res == "" || res == null) localStorage.removeItem("_idcard");
-    else localStorage.setItem("_idcard", res);
-    document.getElementById("_idcard").innerText = _idcard = res || "11**************19";
-  });
-  document.getElementById("_name").innerText = _name;
-  document.getElementById("_idcard").innerText = _idcard;
+
+  let _name = localStorage.getItem("_name") || alert("请先登录");
+  let _idcard = localStorage.getItem("_idcard") || alert("请先登录");
+  document.getElementById("_name").innerText = presetFilters.lastnameonly(_name);
+  document.getElementById("_idcard").innerText = presetFilters.idcard(2, 2)(_idcard);
 
   document.getElementsByClassName("img-tou")[0].attributes["src"].value = localStorage.getItem("_img") || default_img;
   document.getElementsByClassName("img-tou")[0].addEventListener("click", () => {

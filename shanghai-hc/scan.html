@@ -191,7 +191,7 @@
   <br><br>
   <p id="tap-to-continue">轻触屏幕继续...</p>
   <br><br>
-  <div id="skip-scan">跳过扫描</div>
+  <div id="skip-scan">以后都跳过本提示</div>
 </div>
 <div class="navbar navbar--wechat" id="nav">
   <div class="navbar__placeholder"></div>
@@ -241,12 +241,15 @@
 </div>
 <iframe src="./checkin.html"></iframe>
 <script>
+
   document.getElementById("skip-scan").addEventListener("click", (e) => {
-    e.stopPropagation();
-    window.location.href = "./checkin.html";
+    localStorage.setItem("skipTips", 1);
+  });
+  document.getElementById("skip-scanTips").addEventListener("click", (e) => {
+
   });
   const video = document.querySelector("video");
-  document.getElementById("info").addEventListener("click", () => {
+  function startScan(){
     document.getElementById("nav").style.display = "none";
     if (!navigator.mediaDevices) {
       alert("无法使用摄像头。请确保源码部署在 https 环境下。");
@@ -257,18 +260,24 @@
           facingMode: "environment",
         }
       })
-      .then((stream) => {
-        video.srcObject = stream;
-        video.onloadedmetadata = () => {
-          video.play();
-        };
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+              .then((stream) => {
+                video.srcObject = stream;
+                video.onloadedmetadata = () => {
+                  video.play();
+                };
+              })
+              .catch((err) => {
+                console.log(err);
+              });
     }
     document.getElementById("info").remove();
     document.getElementById("scan-content").style.display = "block";
+  }
+  if (localStorage.getItem("skipTips")) {
+    startScan();
+  }
+  document.getElementById("info").addEventListener("click", () => {
+    startScan();
   });
   document.getElementById("scan-content").addEventListener("click", () => {
     const audio = document.querySelector("audio");
@@ -283,5 +292,6 @@
     });
   });
 
-  initServiceWorker("ssm");
+  initServiceWorker("shanghai-hc");
+
 </script>
