@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<title>健康宝</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+<meta name="theme-color" content="#327fff">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="./static/logo_jiankangbao1@2x.png">
+<link rel="apple-touch-icon" sizes="128x128" href="./static/logo_jiankangbao1@2x.png">
+<link rel="stylesheet" href="../common/nav.css">
+<link rel="stylesheet" href="./static/app.css">
+<script src="../common/base.js"></script>
+
+<view class="navbar navbar--wechat navbar--wechat-alternative">
+  <view class="navbar__placeholder"></view>
+  <view class="navbar__inner" style="background: #327FFF;">
+    <view class="navbar__left">
+      <view class="navbar__buttons" onclick="history.back();">
+        <view class="navbar__button-goback"></view>
+      </view>
+    </view>
+    <view class="navbar__center">
+      <text>健康宝</text>
+    </view>
+    <view class="navbar__right">
+
+    </view>
+  </view>
+  <view class="capsule capsule--wechat capsule--alternative" onclick="navigateHome();">
+    <svg class="capsule__menu-icon" viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="14" r="9.5"/>
+      <circle cx="54" cy="14" r="6"/>
+      <circle cx="10" cy="14" r="6"/>
+    </svg>
+    <view class="capsule__splitter"></view>
+    <svg class="capsule__exit-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="9"/>
+      <circle cx="30" cy="30" r="23" stroke-width="6" fill="transparent"/>
+    </svg>
+  </view>
+</view>
+<view class="taren">
+
+  <view class="wrap" style="min-height:{{windowHeight}}px;">
+    <view class="header_con">
+      <view class="left"> 查询记录 </view>
+
+    </view>
+    <view class="placeholder-view"></view>
+  </view>
+  <view class="footer">
+    <div class="footer-btn" onclick=""><img src="./static/icon.png" style="width: 5.333vw; margin-right: 4.533vw; margin-top: 3.5vw;"> 添加他人健康状态</div>
+  </view>
+</view>
