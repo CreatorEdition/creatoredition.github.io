@@ -84,9 +84,13 @@ page {
 .tanhao{height:6.4vw;top:7.733vw;width:6.4vw}
 .tanhao .texts{position:absolute}
 .texts{-webkit-align-items:center;align-items:center;border-radius:2.133vw;color:#fff;display:-webkit-flex;display:flex;height:13.333vw;left:5.867vw;padding:0 2.133vw;top:4.533vw;width:75.333vw}
-                                                                                                                                                                                                                                .laba{display:inline-block;height:5.6vw;width:5.867vw}
+
+.laba{    display: inline-block;
+    width: 5.867vw;
+    height: 11.333vw;
+    margin: 0 auto;}
 .swiper_container{height:13.333vw;margin:0 auto;width:62.667vw}
-.swiper_item{color:#151515;font-size:3.733vw;height:11.467vw;line-height:11.467vw;overflow:hidden;padding-left:1.333vw;text-overflow:ellipsis;white-space:nowrap}
+.swiper_item{color:#FFF;font-size:3.733vw;height:11.467vw;line-height:11.467vw;overflow:hidden;padding-left:1.333vw;text-overflow:ellipsis;white-space:nowrap}
 
 
 .wa-comp-tf-jkt-Marquee .container {
@@ -137,7 +141,8 @@ page {
 
 .con {
     background: #fff;
-    border-radius: 4.8vw;
+    /* border-radius: 4.8vw;*/
+    border-radius: 2.133vw;
     box-shadow: 0 1.33vw 2.667vw 0 rgba(0,0,0,.05);
     box-sizing: border-box;
     margin: 4.267vw auto 0;

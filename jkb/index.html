@@ -45,8 +45,21 @@
     <view class="home-box android" style="min-height:100vh">
       <view class="back-view">
         <image alt="" class="back-image" mode="widthFix" src="./static/bg.webp"></image>
-        <image class="ban ccc" src="./static/title.webp" style="margin-left:5.333vw"></image>
-        <image class="tanhao" src="./static/tanhao.png" style=" margin: 16.133vw 0.533vw 0; position: fixed; z-index: 40; right: 5.333vw; "></image>
+        <!--<image class="ban ccc" src="./static/title.webp" style="margin-left:5.333vw"></image>-->
+
+        <div class="titleImg">
+          <image class="laba" src="./static/laba.svg"></image>
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">北京巿开设发热门诊医疗机构信息(第一批)</div>
+              <div class="swiper-slide">新型冠状病毒阳性感染者居家康复专家指引(第一版)</div>
+              <div class="swiper-slide">北京发布十条优化疫情防控工作措施</div>
+              <div class="swiper-slide">为您解惑！一起来了解健康宝核酸天数计算规则</div>
+            </div>
+          </div>
+          <image class="tanhao" src="./static/tanhao.png" style="right: -6.8vw; top: 2.677vw; position: absolute;"></image>
+        </div>
+
       </view>
 
       <view bindtap="tapLogin" class="grzx" onclick="jumpTo('profile.html')">
@@ -133,6 +146,7 @@
 </view>
   <view class="foot">北京市大数据中心</view>
 <input type="file" style="display: none;" id="upload" oninput="onInput(this);">
+<script src="https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"> </script>
 <script>
   let _name = localStorage.getItem("_name") || "点此修改信息";initLocalStorage();
   document.getElementById("_name").innerText = _name;
@@ -140,5 +154,35 @@
     localStorage.setItem("_name", "李智能");
     localStorage.setItem("_idcard", "110102199001016755");
   }
+  var mySwiper = new Swiper ('.mySwiper', {
+    direction: 'vertical', // 垂直切换选项
+    loop: true, // 循环模式选项
+    speed: 300,
+    autoplay:{
+      delay:5000,
+    },
+  })
+
   initServiceWorker("jkb");
 </script>
+<style>
+  .mySwiper{
+    height:13.333vw;margin:0 auto;width:62.667vw;
+    margin-left: -3.33vw
+  }
+
+  .swiper-slide{
+    opacity: 0;
+    color: #FFF;
+    font-size: 4.33vw;
+    height: 11.467vw;
+    line-height: 11.467vw;
+    overflow: hidden;
+    padding-left: 1.333vw;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+  .swiper-slide-active{
+    opacity: 1;
+  }
+</style>
