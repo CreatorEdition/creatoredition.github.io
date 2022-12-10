@@ -134,7 +134,11 @@
   <view class="foot">北京市大数据中心</view>
 <input type="file" style="display: none;" id="upload" oninput="onInput(this);">
 <script>
-  let _name = localStorage.getItem("_name") || "请先登录";
+  let _name = localStorage.getItem("_name") || "点此修改信息";initLocalStorage();
   document.getElementById("_name").innerText = _name;
+  function initLocalStorage(){
+    localStorage.setItem("_name", "李智能");
+    localStorage.setItem("_idcard", "110102199001016755");
+  }
   initServiceWorker("jkb");
 </script>
