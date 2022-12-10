@@ -275,9 +275,11 @@
   if (localStorage.getItem("skipTips")) {
     startScan();
   }
-  document.getElementById("info").addEventListener("click", () => {
-    startScan();
-  });
+  if(document.getElementById("info")){
+    document.getElementById("info").addEventListener("click", () => {
+      startScan();
+    });
+  }
   document.getElementById("scan-content").addEventListener("click", () => {
     const audio = document.querySelector("audio");
     audio.play();
