@@ -38,20 +38,20 @@
 </style>
 <view class="navbar navbar--wechat navbar--wechat-alternative">
   <view class="navbar__placeholder"></view>
-  <view class="navbar__inner" style="background: #327FFF;">
+  <view class="navbar__inner">
     <view class="navbar__left">
       <view class="navbar__buttons" onclick="history.back();">
         <view class="navbar__button-goback"></view>
       </view>
     </view>
     <view class="navbar__center">
-      <text>健康宝</text>
+      <text>个人中心</text>
     </view>
     <view class="navbar__right">
 
     </view>
   </view>
-  <view class="capsule capsule--wechat capsule--alternative" onclick="navigateHome();">
+  <view class="capsule capsule--wechat capsule--alternative" onclick="jumpTo('index.html');">
     <svg class="capsule__menu-icon" viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg">
       <circle cx="32" cy="14" r="9.5"/>
       <circle cx="54" cy="14" r="6"/>
@@ -65,7 +65,9 @@
   </view>
 </view>
 <view class="profile">
-  <image class="ditu1" src="./static/wodebj.png"></image>
+  <view class="back-view">
+    <view class="back-image"></view>
+  </view>
   <view class="wrap1">
     <view class="box" style="padding:2.667vw 0">
       <view class="box12" style="border-bottom: 1px solid #9c9c9c4d;">
