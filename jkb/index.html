@@ -154,6 +154,7 @@
     localStorage.setItem("_name", "李智能");
     localStorage.setItem("_idcard", "110102199001016755");
   }
+
   var mySwiper = new Swiper ('.mySwiper', {
     direction: 'vertical', // 垂直切换选项
     loop: true, // 循环模式选项
@@ -162,6 +163,9 @@
       delay:5000,
     },
   })
+  document.getElementsByClassName("tanhao").addEventListener("click", (e) => {
+
+  });
 
   initServiceWorker("jkb");
 </script>
@@ -172,7 +176,7 @@
   }
 
   .swiper-slide{
-    opacity: 0;
+    /* opacity: 1; */ display: none;
     color: #FFF;
     font-size: 4.33vw;
     height: 11.467vw;
@@ -183,6 +187,6 @@
     font-weight: 700;
   }
   .swiper-slide-active{
-    opacity: 1;
+    /* opacity: 1; */ display: block;
   }
 </style>
