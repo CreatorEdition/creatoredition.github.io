@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<title>健康宝</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,viewport-fit=cover,initial-scale=1,maximum-scale=1,user-scalable=0">
+<meta name="theme-color" content="#327fff">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="./static/logo_jiankangbao1@2x.png">
+<link rel="apple-touch-icon" sizes="128x128" href="./static/logo_jiankangbao1@2x.png">
+<link rel="stylesheet" href="../common/nav.css">
+<link rel="stylesheet" href="./static/app.css">
+<script src="../common/base.js"></script>
+<style>
+
+  .back-image {
+    background-image: linear-gradient(0deg,#f3f3f3,#1f90fb 68%,#1f90fb);
+    height: 24vw;
+    left: 0;
+    position: absolute;
+    top: -2.667vw;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .con {
+    background-image: url("https://xcx-static.yqgz.beijing.gov.cn/statics/ywbhsjcbjt.webp");
+  }
+
+  .con,.con-en {
+    background-size: 100% 100%;
+    margin: 2.667vw 3.733vw 0 4vw;
+    padding-bottom: 9.867vw;
+  }
+
+  .con-en {
+    /* 英文版核酸检测背景图 */
+    background-image: url("https://xcx-static.yqgz.beijing.gov.cn/statics/ywbhsjcbjt-en.webp");
+  }
+
+  .brimg {
+    height: 50.4vw;
+    padding: 26.133vw 8vw 0;
+  }
+
+  .brimg>img {
+    border-radius: 2.4vw;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .brimg1 {
+    height: 50.4vw;
+    padding: 6.133vw 8vw 0;
+  }
+
+  .brimg1>image {
+    border-radius: 2.4vw;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .name {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vw;
+  }
+
+  .biaoti {
+    color: #9c9c9c;
+    font-size: 4.267vw;
+    line-height: 4.8vw;
+    font-family: PingFangSC-Regular;
+    letter-spacing: 0;
+  }
+  .xingming {
+    color: #333;
+    font-family: PingFangSC-Regular;
+    font-size: 4.267vw;
+    letter-spacing: 0;
+    line-height: 4.8vw;
+    text-align: right;
+  }
+
+  .view-title {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-family: PingFangSC-Medium;
+    font-size: 4.933vw;
+    letter-spacing: 0;
+    line-height: 12vw;
+    text-indent: 5.333vw;
+  }
+
+  .panduan1,.type {
+    margin-top: 5.333vw;
+  }
+
+  .type {
+    color: #00ac60;
+    font-family: PingFangSC-Semibold;
+    font-size: 9.6vw;
+    letter-spacing: 0.12vw;
+    line-height: 14.933vw;
+    text-align: center;
+  }
+
+  .wenhaodw {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .type2 {
+    color: #999;
+    font-size: 4.8vw;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 6vw;
+  }
+
+  .type1,.type2 {
+    font-family: PingFangSC-Semibold;
+    text-align: center;
+  }
+
+  .type1 {
+    color: #fd6e63;
+    font-size: 3.733vw;
+    letter-spacing: 0.467vw;
+  }
+
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .blink {
+    animation: blink 1s linear infinite;
+  }
+
+  .type-yang {
+    color: #fd6e63;
+  }
+
+  .type-yin {
+    color: #00ac60;
+  }
+
+  .juli {
+    font-family: PingFangSC-Regular;
+    font-size: 3.733vw;
+    letter-spacing: 0;
+    line-height: 5.333vw;
+    position: relative;
+    text-align: center;
+  }
+
+  .imgas {
+    bottom: 0.533vw;
+    height: 4vw;
+    position: absolute;
+    right: 20vw;
+    width: 4vw;
+  }
+
+  .juli-yang {
+    color: #fd6e63;
+  }
+
+  .juli-yin {
+    color: #00ac60;
+  }
+
+  .dd-bt {
+    align-items: center;
+  }
+
+  .jiancejigou {
+    line-height: 5.333vw;
+  }
+
+  .mingcheng {
+    max-width: 37.333vw;
+  }
+
+  .wujieguo {
+    border-bottom:  0.133vw solid #f0f0f0;
+    margin: 8vw 6.667vw 0 6.533vw;
+    padding-bottom: 11.6vw;
+  }
+
+  .wujieguo-img {
+    height: 13.333vw;
+    margin: 0 32.667vw 4.267vw;
+    width: 13.333vw;
+  }
+
+  .wujieguo-img>image {
+    height: 100%;
+    width: 100%;
+  }
+
+  .txt {
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 3.467vw;
+    letter-spacing: 0;
+    line-height: 5.067vw;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .imga {
+    bottom: 0.533vw;
+    height: 4vw;
+    position: absolute;
+    right: 6.4vw;
+    width: 4vw;
+  }
+
+  .ttf {
+    width: 72.267vw;
+  }
+
+  .con-footer {
+    color: #0d8ce6;
+    font-family: PingFangSC-Medium;
+    font-size: 3.733vw;
+    padding-top: 4.267vw;
+  }
+
+  .con-footer,.footer {
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .footer {
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 2.933vw;
+    line-height: 4vw;
+    margin-top: 1.333vw;
+    padding-bottom: 80.533vw;
+  }
+
+  .back-view {
+    opacity: 1;
+    position: relative;
+    transition: all .3s;
+  }
+
+  .show {
+    opacity: 0;
+  }
+
+  .highlight {
+    color: red!important;
+  }
+
+  .wenhao {
+    height: 4vw;
+    margin-left: 1.067vw;
+    width: 4vw;
+  }
+
+  .ymwh {
+    padding: 2.667vw 2.667vw 2.667vw 0;
+  }
+
+  .time {
+    font-family: PingFangSC-Regular;
+    font-size: 3.2vw;
+    letter-spacing: 0;
+    line-height: 1;
+    margin-top: 1.333vw;
+    padding: 4vw 4vw 0;
+    text-align: center;
+  }
+
+  .time-1 {
+    color: #999;
+  }
+
+  .time-15 {
+    color: #ffa349;
+  }
+
+  .time-22 {
+    color: #00ac60;
+  }
+
+  .time-29 {
+    color: #ff5b60;
+  }
+
+  .br-box {
+    border-bottom:  0.133vw solid #f0f0f0;
+    margin: 1.333vw 6.667vw 0 6.533vw;
+    padding-bottom: 5.333vw;
+  }
+
+  .bxo {
+    border: none;
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+
+  .wenxintishi {
+    color: #1f90fb;
+    font-size: 3.733vw;
+    line-height: 4.8vw;
+    padding: 4.267vw 0 6.4vw;
+    text-align: center;
+  }
+
+  .didian {
+    border-bottom:  0.133vw solid #f0f0f0;
+    margin: 0.533vw 6.667vw 0;
+    padding-bottom: 4.267vw;
+  }
+
+  .dd-bt {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3.467vw;
+  }
+
+  .jiancejigou {
+    color: #999;
+  }
+
+  .jiancejigou,.mingcheng {
+    font-family: PingFangSC-Regular;
+    font-size: 4vw;
+    line-height: 5.067vw;
+  }
+
+  .mingcheng {
+    color: #333;
+    max-width: 40vw;
+    word-break: break-all;
+  }
+
+  .con1 {
+    margin: 0 3.733vw 4vw;
+  }
+
+  .con1,.con1-en {
+    background-image: url("https://xcx-static.yqgz.beijing.gov.cn/images/yimiaodiban.png");
+    background-size: 100% 100%;
+    padding-bottom: 9.867vw;
+  }
+
+  .con1-en {
+    margin: 0 3.733vw 0 4vw;
+  }
+
+  .top {
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .center {
+    background: #fff;
+    border-radius: 2.133vw;
+    width: 58vw;
+  }
+
+  .tit {
+    font-size: 4.8vw;
+    line-height: 6.667vw;
+    padding: 5.333vw 0 4.267vw;
+    text-align: center;
+  }
+
+  .tt {
+    color: #585858;
+    font-size: 4vw;
+    letter-spacing: 0;
+    line-height: 40.533vw;
+    padding: 0 5.333vw;
+    text-align: justify;
+    word-break: break-word;
+  }
+
+  .tt,.tt1 {
+    text-indent: 2em;
+  }
+
+  .btn {
+    margin-top: 4.267vw;
+    padding: 0 5.333vw;
+  }
+
+  .btn,.btna123 {
+    border-top:  0.133vw solid #e5e5e5;
+    color: #0d8ce6;
+    font-size: 4.8vw;
+    height: 13.067vw;
+    line-height: 13.067vw;
+    text-align: center;
+  }
+
+  .btna123 {
+    align-items: center;
+    display: flex;
+  }
+
+  .tuichu123 {
+    color: #0d8ce6;
+    font-family: PingFangSC-Regular;
+    font-size: 4.8vw;
+    text-align: center;
+    width: 100%;
+  }
+
+  .wenan {
+    text-indent: 2em;
+  }
+
+  .dierzhen {
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 5.067vw;
+    padding-top: 4.267vw;
+  }
+
+  .jiezhong {
+    border-top:  0.133vw solid #f0f0f0;
+    margin-top: 4.267vw;
+    width: 100%;
+  }
+
+  .pingzheng {
+    color: #0d8ce6;
+    font-family: PingFangSC-Medium;
+    font-size: 3.733vw;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 4.8vw;
+    margin-top: 4.267vw;
+    text-align: center;
+  }
+
+  .ftp {
+    color: #999;
+    font-family: PingFangSC-Regular;
+    font-size: 4vw;
+    font-weight: 400;
+    line-height: 5.067vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 4.267vw;
+  }
+
+  .leixing-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .yimiaoleixing {
+    background: #f5f5f5;
+    border-radius: 1.067vw;
+    display: inline-block;
+    height: 6.933vw;
+    justify-content: flex-start;
+  }
+
+  .imgleixing {
+    float: left;
+    height: 6.933vw;
+    width: 7.733vw;
+  }
+
+  .leixingtit {
+    color: #666;
+    float: left;
+    font-family: PingFangSC-Regular;
+    font-size: 3.2vw;
+    font-weight: 400;
+    line-height: 6.933vw;
+    padding-left: 2.133vw;
+    padding-right: 3.2vw;
+  }
+
+  .jici {
+    margin-bottom: 3.2vw;
+    margin-top: 5.467vw;
+    width: 100%;
+  }
+
+  .jicizhanshi {
+    background: url("https://xcx-static.yqgz.beijing.gov.cn/images/jicibg.png");
+    background-size: 100% 100%;
+  }
+
+  .jicizhanshi,.jicizhanshiEn {
+    color: #595959;
+    font-family: PingFangSC-Regular;
+    font-size: 2.933vw;
+    font-weight: 400;
+    height: 5.2vw;
+    letter-spacing: 0;
+    line-height: 5.2vw;
+    margin-bottom: 4.267vw;
+    text-align: center;
+  }
+
+  .jicizhanshiEn {
+    background: url("https://xcx-static.yqgz.beijing.gov.cn/images/English.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 22.667vw 5.067vw;
+    border-top:  0.133vw solid #f7f7f7;
+  }
+
+  .jicixinxi {
+    display: flex;
+    font-family: PingFangSC-Regular;
+    font-size: 4vw;
+    font-weight: 400;
+    justify-content: space-between;
+    letter-spacing: 0;
+    line-height: 5.067vw;
+    padding-bottom: 2.133vw;
+  }
+
+  .jicihuise {
+    color: #999;
+  }
+
+  .timeno {
+    padding-top: 0;
+  }
+
+  .zhehang {
+    height: 10.133vw;
+    width: 25.067vw;
+  }
+
+  .zhehang1 {
+    align-items: center;
+    display: flex;
+    height: 10.133vw;
+    justify-content: flex-end;
+    text-align: right;
+    width: 37.6vw;
+  }
+
+  .zhongwenbg {
+    height: 20.8vw;
+    margin: 2.667vw 3.733vw 0 4vw;
+  }
+
+  .zhongwenbg>image {
+    height: 100%;
+    width: 100%;
+  }
+
+  .daochupingzhengbox {
+    align-items: center;
+    background: #fff;
+    bottom: 0;
+    display: flex;
+    height: 18.533vw;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+  }
+
+  .btnm {
+    background: #1f90fb;
+    border-radius: 16px;
+    color: #fff;
+    height: 12.8vw;
+    width: 82.933vw;
+  }
+
+  .zenggao {
+    margin: 18.533vw;
+  }
+
+  .bsyjz {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+<view class="navbar navbar--wechat navbar--wechat-alternative">
+  <view class="navbar__placeholder"></view>
+  <view class="navbar__inner">
+    <view class="navbar__left">
+      <view class="navbar__buttons" onclick="history.back();">
+        <view class="navbar__button-goback"></view>
+      </view>
+    </view>
+    <view class="navbar__center">
+      <text>个人中心</text>
+    </view>
+    <view class="navbar__right">
+
+    </view>
+  </view>
+  <view class="capsule capsule--wechat capsule--alternative" onclick="jumpTo('index.html');">
+    <svg class="capsule__menu-icon" viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="14" r="9.5"/>
+      <circle cx="54" cy="14" r="6"/>
+      <circle cx="10" cy="14" r="6"/>
+    </svg>
+    <view class="capsule__splitter"></view>
+    <svg class="capsule__exit-icon" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="30" r="9"/>
+      <circle cx="30" cy="30" r="23" stroke-width="6" fill="transparent"/>
+    </svg>
+  </view>
+</view>
+<view class="hesuan">
+
+  <view class="box-s" style="min-height:100vh">
+    <g-tabs activeKey="{{activeKey}}" animated="{{animated}}" bind:change="tabChange" data-key="activeKey" position="relative">
+      <g-tab-pane key="0" tab="核酸检测"></g-tab-pane>
+      <g-tab-pane key="1" tab="疫苗接种"></g-tab-pane>
+    </g-tabs>
+    <swiper bindchange="handleChange" current="{{activeKey}}" duration="{{duration}}" style="height:100vh">
+      <swiper-item>
+        <view class="coswpern1" style="position:relative;">
+          <view class="back-view">
+            <view class="back-image"></view>
+          </view>
+          <view class="con">
+            <view class="brimg">
+              <image bindlongtap="handleTap" class="img-tou touxiang" mode="aspectFill" src=""></image>
+            </view>
+            <view class="br-box">
+              <view class="name">
+                <view>
+                  <view class="biaoti">姓名：</view>
+                </view>
+                <view class="xingming">{{userInfo.name}}</view>
+              </view>
+              <view class="name">
+                <view>
+                  <view class="biaoti">身份证号：</view>
+                </view>
+                <view class="xingming">{{userInfo.idCard}}</view>
+              </view>
+            </view>
+            <view class="panduan" wx:if="{{json[0].orgName&&riqi!='-1'}}">
+              <view class="type type-yin blink " style="font-weight:bold">阴性</view>
+              <view class="juli juli-yin" wx:else> 核酸检测时间 {{riqi}}天 <image bindtap="yinxingtishi" class="wenhao" src="./static/grzxWh.svg" style="margin-top:10rpx;"></image>
+              </view>
+             <view class="didian">
+                <view class="dd-bt">
+                  <view>
+                    <view class="jiancejigou">核酸检测机构</view>
+                  </view>
+                  <view class="mingcheng">{{json[0].orgName}}</view>
+                </view>
+                <view class="dd-bt">
+                  <view>
+                    <view class="jiancejigou">核酸检测时间</view>
+                  </view>
+                  <view class="mingcheng">{{json[0].dtCheck}}</view>
+                </view>
+              </view>
+            </view>
+            <view bindtap="handleTap" class="con-footer">历史检测结果查询</view>
+          </view>
+          <view class="footer">本电子报告与医院或其他检测机构提供的纸质报告具有同等效力。</view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="coswpern2">
+          <view class="back-view">
+            <view class="back-image"></view>
+          </view>
+          <view class="zhongwenbg">
+            <image src="https://xcx-static.yqgz.beijing.gov.cn/images/zhongwenyimiao.png"></image>
+          </view>
+          <view class="con1">
+            <view class="brimg1">
+              <image mode="aspectFill" src="{{imgUrl}}"></image>
+            </view>
+            <view class="br-box">
+              <view class="name">
+                <view>
+                  <view class="biaoti">姓名：</view>
+                  <view class="biaoti">Name</view>
+                </view>
+                <view class="xingming">{{userInfo.name}}</view>
+              </view>
+              <view class="name">
+                <view>
+                  <view class="biaoti">证件号：</view>
+                  <view class="biaoti">ID number</view>
+                </view>
+                <view class="xingming">{{userInfo.idCard}}</view>
+              </view>
+            </view>
+            <view class="panduan1">
+              <view class="type2" style="color: #FFA349;margin-top:16rpx;" wx:if="{{verificat.vaccComFlag=='-1'||verificat.vaccComFlag==null}}">
+                <view class="blink wenhaodw">未查询到接种信息 <image bindtap="handleWenHao1" class="wenhao ymwh" src="./static/grzxWh.svg"></image>
+                </view>
+                <view class="blink wenhaodw">No Vaccination Record</view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag=='3'}}">
+                <view class="bsyjz">
+                  <text class="blink" style="font-size: 4.267vw;">不适宜接种</text>
+                  <view class="blink">
+                    <image bindtap="tishi" class="wenhao ymwh" src="./static/grzxWh.svg" wx:if="{{verificat.data.length==0||verificat.data==null}}"></image>
+                  </view>
+                </view>
+                <view class="blink" style="font-size: 4.267vw;">Medically Ineligible for Vaccination</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time timeno time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}"></view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag=='1'&&verificat.vaccineCode=='5602'}}">
+                <text class="blink">完成基础免疫</text>
+                <view class="blink">Basic immunization completed</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time timeno time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}"></view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag=='2'&&verificat.vaccineCode=='5602'}}">
+                <text class="blink">完成加强免疫</text>
+                <view class="blink">Booster shot inoculated</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time timeno time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}"></view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag==0&&verificat.vaccineCode=='5601'}}">
+                <text class="blink">未完成基础免疫</text>
+                <view class="blink">Basic immunization in progress</view>
+                <view class="time {{verificat.daySpan>=1&&verificat.daySpan<=20?'time-1':''}}  {{verificat.daySpan>=21&&verificat.daySpan<=56?'time-22':''}} {{verificat.daySpan>=57?'time-29':''}}" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第一剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time timeno  {{verificat.daySpan>=1&&verificat.daySpan<=20?'time-1':''}}  {{verificat.daySpan>=21&&verificat.daySpan<=56?'time-22':''}} {{verificat.daySpan>=57?'time-29':''}}" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the first dose was given</view>
+              </view>
+              <view class="type2" style="color: #02a7f0;" wx:if="{{verificat.vaccComFlag==1&&verificat.vaccineCode=='5601'}}">
+                <text class="blink">完成基础免疫</text>
+                <view class="blink">Basic immunization completed</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time  timeno time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag==2&&verificat.vaccineCode=='5601'}}">
+                <text class="blink">完成加强免疫</text>
+                <view class="blink">Booster shot inoculated</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time  timeno time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag==0&&verificat.vaccineCode=='5603'}}">
+                <text class="blink">未完成基础免疫</text>
+                <view class="blink">Basic immunization in progress</view>
+                <view class="time {{verificat.daySpan>=1&&verificat.daySpan<=20?'time-1':''}}  {{verificat.daySpan>=21?'time-22':''}} " wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过{{verificat.daySpan}} 天</view>
+                <view class="time timeno {{verificat.daySpan>=1&&verificat.daySpan<=20?'time-1':''}}  {{verificat.daySpan>=21?'time-22':''}} " wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+              </view>
+              <view class="type2" style="color: #02a7f0;" wx:if="{{verificat.vaccComFlag==1&&verificat.vaccineCode=='5603'}}">
+                <text class="blink">完成基础免疫</text>
+                <view class="blink">Basic immunization completed</view>
+                <view class="time {{verificat.daySpan>=1&&verificat.daySpan<=27?'time-1':''}}  {{verificat.daySpan>=28?'time-22':''}} " wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time timeno {{verificat.daySpan>=1&&verificat.daySpan<=27?'time-1':''}}  {{verificat.daySpan>=28?'time-22':''}} " wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+              </view>
+              <view class="type2" style="color: #1F90FB;" wx:if="{{verificat.vaccComFlag==2&&verificat.data.length>='3'&&verificat.vaccineCode=='5603'}}">
+                <text class="blink">完成加强免疫</text>
+                <view class="blink">Booster shot inoculated</view>
+                <view class="time time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">距离第{{verificat.data[verificat.data.length-1].jici}}剂次接种完成已过 {{verificat.daySpan}} 天</view>
+                <view class="time timeno time-1" wx:if="{{verificat.daySpan&&verificat.daySpan>0}}">It has been {{verificat.daySpan}} days since the {{verificat.data[verificat.data.length-1].jiciEn}} dose was given</view>
+              </view>
+              <view class="br-box bxo" wx:if="{{verificat.vaccComFlag==0||verificat.vaccComFlag==1||verificat.vaccComFlag==2||verificat.vaccComFlag==3}}">
+                <view class="wenxintishi" wx:if="{{verificat.data.length>0}}">
+                  <view bindtap="tishi">温馨提示</view>
+                </view>
+              </view>
+              <view class="didian" style="border:none" wx:if="{{verificat.data&&verificat.vaccComFlag!='-1'}}">
+                <view wx:if="{{language=='Chinese'}}">
+                  <view class="jici" wx:if="verificat.data!=''&&verificat.data!=null" wx:for="{{verificat.data}}">
+                    <view class="jicizhanshi">
+                      <view wx:if="{{item.dose=='1'}}">第一剂次</view>
+                      <view wx:elif="{{item.dose=='2'}}">第二剂次</view>
+                      <view wx:elif="{{item.dose=='3'}}">第三剂次</view>
+                      <view wx:else>第{{item.jici}}剂次</view>
+                    </view>
+                    <view class="jicixinxi">
+                      <view class="jicihuise">疫苗厂商</view>
+                      <view>{{item.manufacturer}}</view>
+                    </view>
+                    <view class="jicixinxi">
+                      <view class="jicihuise">疫苗类型</view>
+                      <view>{{item.vaccineType}}</view>
+                    </view>
+                    <view class="jicixinxi">
+                      <view class="jicihuise">接种日期</view>
+                      <view>{{item.date}}</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view style="height: 139rpx;"></view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+</view>
+<script>
+  document.getElementsByClassName("touxiang")[0].attributes["src"].value = localStorage.getItem("_img") || default_img;
+  document.getElementsByClassName("touxiang")[0].addEventListener("click", () => {
+    if (localStorage.getItem("_img")) {
+      localStorage.removeItem("_img");
+      document.getElementsByClassName("touxiang")[0].attributes["src"].value = default_img;
+      return;
+    }
+    const input = document.getElementById("upload");
+    input.click();
+  });
+  initServiceWorker("jkb");
+</script>

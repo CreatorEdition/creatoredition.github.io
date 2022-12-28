@@ -14,6 +14,22 @@ window.onload=function(){
     }, 1000);
 }
 
+function weui_dialog(js_title,js_text,btn_A,btn_B){
+  var html ='<div role="alert" id="js_dialog" style="display:block"><div class="weui-mask_transparent"></div>' +
+      '<div class="weui-dialog">\n' +
+      '                <div class="weui-dialog__hd"><strong class="weui-dialog__title" id="js_title1">'+js_title+'</strong></div>\n' +
+      '                <div class="weui-dialog__bd">'+js_text+'</div>\n' +
+      '                <div class="weui-dialog__ft">\n' +
+      '                    <a role="button" href="javascript:" class="weui-dialog__btn weui-dialog__btn_default">'+btn_A+'</a>\n' +
+      '                    <a role="button" href="javascript:" class="weui-dialog__btn weui-dialog__btn_primary">'+btn_B+'</a>\n' +
+      '                </div>\n' +
+      '            </div>' +
+      '</div>';
+  var new_ele=document.createElement("div");
+  new_ele.innerHTML=html;
+  document.body.appendChild(new_ele);
+}
+
 function hideId($id){
   document.getElementById($id).style.display = "none";
 }
