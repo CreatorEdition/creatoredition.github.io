@@ -1368,7 +1368,7 @@
   .hesuan_orgereen .block-item_desc,
   .hesuan_orgereen .block-item_tips,
   .hesuan_orgereen .block-item_title {
-    color: #fff;
+    /* color: #fff; */
     margin-bottom: 0.8vw;
   }
 
@@ -1952,8 +1952,8 @@
   }
 
   .normalTag {
-    background: hsla(0, 0%, 100%, .2);
-    color: #fff;
+    background: #3888ff1a;
+    color: #3888ff;
   }
 
   .colorTag,
@@ -2045,24 +2045,18 @@
           <div ariaLabel="健康信息" ariaRole="button" bind:tap="handleTap" class="cell-list-item" data-action="report"
             data-actionType="jkxx" data-path="/operation_plus/pages/yiqing/daka/user/apply-history/index">
             <image class="cell-list-icon" src="./static/mm.svg"></image>
-            <div class="cell-list-font">健康信息</div>
-          </div>
-          <div ariaLabel="行程卡" ariaRole="button" bind:tap="handleTap" class="cell-list-item_img" data-action="report"
-            data-actionDesc="xingchengla" data-actionType="fuwu" data-appid="wx8f446acf8c4a85f5" data-label="行程卡"
-            data-path="">
-            <image class="xckcard" src="./static/80401c2e955ec7aa3f126ae90801efd1.png"
-              onclick="navigateToTripCard();"></image>
+            <div class="cell-list-font">健康信息<img class="block-item_arrow" src="./static/44e817161a84279f6440d4a52d117900.svg"></div>
           </div>
         </div>
       </div>
       <div class="sub-block">
-        <div ariaLabel="核酸检测24小时阴性。" ariaRole="text" bind:tap="handleTap" class="block-item hesuan_block hesuan_blue"
+        <div ariaLabel="核酸检测24小时阴性。" ariaRole="text" bind:tap="handleTap" class="block-item"
           onclick="jumpTo('./detail.html');">
           <div class="block-item_title">
-            <image class="block-item_icon" src="./static/4508c60464ce3888449fc79e838e73cd.svg"></image>
+            <image class="block-item_icon" src="./static/e54c91d823434321fde0d6dab5b73b98.png"></image>
             核酸检测
-            <image class="block-item_arrow" src="./static/b4455fa4d4a6cd9227fe4703238eeb51.svg"></image>
-            <div class="tag normalTag">查省外</div>
+            <image class="block-item_arrow" src="./static/44e817161a84279f6440d4a52d117900.svg"></image>
+            <div class="tag colorTag">查省外</div>
           </div>
           <div>
             <div class="block-item_desc desc--green no_pt">
