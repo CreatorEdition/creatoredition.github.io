@@ -148,7 +148,7 @@ const apps = {
     help_text:
       "<p>点击姓名、证件号、场所地址等可以修改对应信息；</p><p>点击照片可以更改或移除照片，超过 4MB 的图片可能无法在本地保存；</p><p>点击二维码展示场所码。</p>",
     menu: [
-      { title: "扫描", icon: "qr_code_scanner", link: "shanghai-hc/scan.html" },
+      { title: "核酸", icon: "vaccines", link: "shanghai-hc/detail.html" },
       { title: "场所", icon: "place", link: "shanghai-hc/checkin.html" },
     ],
   },
