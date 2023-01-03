@@ -49,10 +49,12 @@
 <view class="page-view nuc data-v-17195bd9">
     <view class="bg data-v-17195bd9">核酸检测结果由各医院和检测机构提供，纸质检验报告到检测单位获取</view>
     <view class="nuc-content data-v-17195bd9">
+
         <view class="Chinese-English data-v-17195bd9">
             <view class="tic data-v-17195bd9">48小时内核酸检测信息</view>
         </view>
         <view class="reportTip data-v-17195bd9">（以出具报告时间为准）</view>
+
 
         <view class="nuc-item data-v-224fe6b7">
             <view class="data-v-224fe6b7">
@@ -94,13 +96,90 @@
         <view class="other-provinces data-v-17195bd9">
             <text class="mini-btn buttonStyle data-v-17195bd9" disabled="true" plain="true" size="mini" color="#3DA2FF" text-align="center" type="warn">查询外省市核酸检测结果并上传陕西一码通</text>
         </view>
-
         <view class="data-v-17195bd9">
-            <view class="box data-v-17195bd9" onclick="jumpTo('nucResultEdit.html')">
-                <text class="show-tit data-v-17195bd9">近14天全部核酸检测结果</text>
-                <view class="u-icon__icon data-v-2ee87dc9 uicon-arrow-down"></view>
+            <view class="box data-v-17195bd9">
+                <text class="show-tit data-v-17195bd9" style="color:#0bae81">近14天全部核酸检测结果</text>
+                <view class="u-icon__icon data-v-2ee87dc9 uicon-arrow-down" style="color:#0bae81"></view>
             </view>
         </view>
+
+        <view class="nuc-item data-v-224fe6b7">
+            <view class="data-v-224fe6b7">
+                <view class="info data-v-224fe6b7">
+                    <view class="cell data-v-224fe6b7">
+                        <view class="label data-v-224fe6b7">姓名</view>
+                        <text class="va data-v-224fe6b7" id="name"></text>
+                    </view>
+                    <view class="cell data-v-224fe6b7">
+                        <view class="label data-v-224fe6b7">关系</view>
+                        <text class="va data-v-224fe6b7">本人</text>
+                    </view>
+                    <view class="cell data-v-224fe6b7">
+                        <view class="label data-v-224fe6b7">证件号码</view>
+                        <text class="va data-v-224fe6b7" id="idcard"></text>
+                    </view>
+                    <view class="data-v-224fe6b7 result t-icon t-icon-yangxing-dan"></view>
+                    <view class="ci l_ci data-v-224fe6b7"></view>
+                    <view class="ci r_ci data-v-224fe6b7"></view>
+                </view>
+                <view class="address data-v-224fe6b7">
+                    <view class="item data-v-224fe6b7">
+                        <text class="label data-v-224fe6b7">采样时间:</text>
+                        <text class="data-v-224fe6b7" id="sample-time1"></text>
+
+                    </view>
+                    <view class="item data-v-224fe6b7">
+                        <text class="label data-v-224fe6b7">检测时间:</text>
+                        <text class="data-v-224fe6b7" id="test-time1"></text>
+                    </view>
+                    <view class="data-v-224fe6b7">
+                        <text class="label data-v-224fe6b7">检测机构:</text>
+                        <text class="data-v-224fe6b7" id="test-institution"></text>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+
+        <view class="nuc-item data-v-224fe6b7">
+            <view class="data-v-224fe6b7">
+                <view class="info data-v-224fe6b7">
+                    <view class="cell data-v-224fe6b7">
+                        <view class="label data-v-224fe6b7">姓名</view>
+                        <text class="va data-v-224fe6b7" id="name"></text>
+                    </view>
+                    <view class="cell data-v-224fe6b7">
+                        <view class="label data-v-224fe6b7">关系</view>
+                        <text class="va data-v-224fe6b7">本人</text>
+                    </view>
+                    <view class="cell data-v-224fe6b7">
+                        <view class="label data-v-224fe6b7">证件号码</view>
+                        <text class="va data-v-224fe6b7" id="idcard"></text>
+                    </view>
+                    <view class="data-v-224fe6b7 result t-icon t-icon-yangxing-dan"></view>
+                    <view class="ci l_ci data-v-224fe6b7"></view>
+                    <view class="ci r_ci data-v-224fe6b7"></view>
+                </view>
+                <view class="address data-v-224fe6b7">
+                    <view class="item data-v-224fe6b7">
+                        <text class="label data-v-224fe6b7">采样时间:</text>
+                        <text class="data-v-224fe6b7" id="sample-time1"></text>
+
+                    </view>
+                    <view class="item data-v-224fe6b7">
+                        <text class="label data-v-224fe6b7">检测时间:</text>
+                        <text class="data-v-224fe6b7" id="test-time1"></text>
+                    </view>
+                    <view class="data-v-224fe6b7">
+                        <text class="label data-v-224fe6b7">检测机构:</text>
+                        <text class="data-v-224fe6b7" id="test-institution"></text>
+                    </view>
+
+                </view>
+            </view>
+        </view>
+
+
     </view>
     <view class="tips-b data-v-17195bd9">
         <view class="data-v-17195bd9">核酸和抗体检测数据在不断汇聚和完善中</view>
@@ -119,6 +198,12 @@
     addStorageField("_test_institution", "#test-institution", "检测机构", "西安中美弘康医学检验实验室");
     addStorageField('_name', '#name', '姓名', '李智能', presetFilters.name_preferfirstname);
     addStorageField('_idcard', '#idcard', '身份证号', '110101195306153019', presetFilters.idcard(1, 2));
+    addStorageField("_sample_time_1", "#sample-time1", "采样时间", "2023-01-01 19:35:51");
+    addStorageField("_test_time_1", "#test-time1", "检测时间", "2023-01-02 08:35:51");
+    addStorageField("_test_institution_1", "#test-institution1", "检测机构", "武警陕西省总队医院");
+    addStorageField("_sample_time_2", "#sample-time2", "采样时间", "2023-01-01 10:41:39");
+    addStorageField("_test_time_2", "#test-time2", "检测时间", "2023-01-02 21:12:32");
+    addStorageField("_test_institution_2", "#test-institution2", "检测机构", "西安交通大学第二附属医院");
     initServiceWorker('shaanxi-hc');
 </script>
 </body>
